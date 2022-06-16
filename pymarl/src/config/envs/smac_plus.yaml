@@ -1,0 +1,49 @@
+env: sc2
+
+env_args:
+  continuing_episode: False
+  difficulty: "7"
+  game_version: null
+  map_name: "3m"
+  move_amount: 2
+  obs_all_health: True
+  obs_instead_of_state: True
+  obs_last_action: True
+  obs_own_health: True
+  obs_pathing_grid: True
+  obs_terrain_height: True
+  obs_timestep_number: False
+  obs_broadcast_info: False
+  obs_communicate_info: True
+  reward_death_value: 10
+  reward_defeat: 0
+  reward_negative_scale: 0.5
+  reward_only_positive: True
+  reward_scale: True
+  reward_scale_rate: 20
+  reward_sparse: False
+  reward_win: 200
+  replay_dir: ""
+  replay_prefix: ""
+  state_last_action: True
+  state_timestep_number: False
+  step_mul: 8
+  seed: null
+  heuristic_ai: False
+  heuristic_rest: False
+  debug: False
+
+ # multi stage
+reward_multi_stage:
+  reward_alt_start_ratio : 0
+  reward_alt_end_ratio : 0
+  reward_alt_end_step : 5000
+  reward_alt_method : "linear"
+
+test_greedy: True
+test_nepisode: 32
+test_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+learner_log_interval: 10000
+t_max: 10050000
