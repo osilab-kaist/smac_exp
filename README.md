@@ -34,6 +34,37 @@ Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
 mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 ```
+## Implemented Algorithms
+| Algorithm | Category | Paper Links|
+|---|---|---|
+| `IQL` | Value based | [paper](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.55.8066)|
+| `VDN` | Value based |  [paper](https://arxiv.org/abs/1706.05296)|
+| `QTRAN` | Value based |  [paper](https://arxiv.org/abs/1905.05408)|
+| `QMIX` | Value based |  [paper](https://arxiv.org/abs/1803.11485)|
+| `DIQL` | Distributional Value based | [paper](https://arxiv.org/abs/2102.07936)|
+| `DDN` | Distributional Value based | [paper](https://arxiv.org/abs/2102.07936)|
+| `DMIX` | Distributional Value based | [paper](https://arxiv.org/abs/2102.07936) |
+| `DRIMA` | Distributional Value based | [paper](https://openreview.net/forum?id=5qwA7LLbgP0) |
+| `COMA` | Policy Gradient based | [paper](https://arxiv.org/abs/1705.08926) |
+| `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/1801.01290) |
+| `MADDPG` | Policy Gradient based | [paper](https://arxiv.org/abs/1706.02275) |
+
+## Maps
+### Defense
+| Name | Ally Units | Enemy Units | Opponents approach |
+|---|---|---|---|
+| `defense_infantry` | 1 Mar & 4 M | 1 Mar & 6 M | One-sided |
+| `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
+| `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
+
+### Offense
+| Name | Ally Units | Enemy Units | Distance & formation |
+|---|---|---|---|
+| `offense_near` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Near & Spread |
+| `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
+| `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+| `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+| `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
 
 ## Run an experiment 
 Episode mode
