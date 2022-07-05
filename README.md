@@ -63,6 +63,10 @@ mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 | `offense_near` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Near & Spread |
 | `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
 | `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+
+### Challenging
+| Name | Ally Units | Enemy Units | Distance & formation |
+|---|---|---|---|
 | `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
 | `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
 
