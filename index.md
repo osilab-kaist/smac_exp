@@ -1,61 +1,78 @@
-# SMAC+
+---
+layout: page
+---
 
-### Abstract
- In this paper, we propose a novel benchmark called SMAC+, where agents learn to perform multi-stage tasks and to use environmental benefits without precise reward functions. 
- The StarCraft Multi-Agent Challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning (MARL) is mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. 
- SMAC+, on the other hand, is interested in exploration capability of MARL algorithms to efficiently learn intrinsic tasks and advantages as well as micro-control. This study presents two types scenarios. 
- In the offensive scenarios, agents must learn to find opponents first and then eliminate them, whereas the defensive scenarios need agents to use topographic features such as placing behind structures to lower the possibility of being attacked by enemies. 
- In those scenarios, MARL algorithms must learn indirectly how they perform usage of benefits or multi-stage tasks without direct incentives relying on their exploration. 
- We investigate MARL algorithms under SMAC+ and observe that recent approaches work well in similar settings to the previous challenges but misbehave in offensive scenarios, even when training time is significantly extended. 
- We also discover that risk-based extra exploration approach has a positive effect on performance through the completion of sub-tasks.
-### Demo
+# The StarCraft Multi-Agent Challenges+
+
+The StarCraft Multi-Agent Challenges requires agents to learn completion of multi-stage tasks and use of environmental factors without precise reward functions. The previous challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. This challenge, on the other hand, is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control. This study covers both offensive and defensive scenarios. In the offensive scenarios, agents must learn to first find opponents and then eliminate them. The defensive scenarios require agents to use topographic features. For example, agents need to position themselves behind protective structures to make it harder for enemies to attack. We investigate MARL algorithms under SMAC+ and observe that recent approaches work well in similar settings to the previous challenges, but misbehave in offensive scenarios. Additionally, we observe that an enhanced exploration approach has a positive effect on performance but is not able to completely solve all scenarios. This study proposes a new axis of future research. 
+
+<br/>
+
+## Source Codes
+Here is the [Code] for the benchmark and implemented baselines.  
+<br/>  
+
+## SMAC+ Descriptions
+<hr>
+
+**<span style="font-family:Raleway; font-size:1.0em;"> We need defensive / offensive scenarios overview </span>**  
+
+<br/>  
+<br/>  
+
+## SMAC+ Benchmarks
+<hr>
+
+### Defensive Sceanrios
+**<span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span>**  
+TBD  
+
+**<span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span>**  
+TBD  
+<br/>
+
+### Offensive Sceanrios
+**<span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span>**  
+TBD  
+
+**<span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span>**  
+TBD  
+<br/>
+
+### Challenging
+**<span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span>**  
+TBD  
+
+**<span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span>**  
+TBD  
+<br/>
+<br/>  
 
 
-**Put some GIF things**
+## Ablation Study
+<hr>
 
+**<span style="font-family:Raleway; font-size:1.0em;"> Reward Engineering </span>**  
+TBD  
 
-### Installation Guide
-**Git clone SMAC_PLUS**:
-```shell
-git clone https://github.com/osilab-kaist/smac_plus.git
-```
+**<span style="font-family:Raleway; font-size:1.0em;"> Heatmaps </span>**  
+TBD 
 
-**Download StarCraft II**
-Set up StarCraft II:
-```shell
-bash install_sc2.sh
-```
+<br/>
+<br/>  
 
-This will download SC2 into the `pymarl/3rdparty` folder.
+## SMAC+ Future Direction
+<hr>
+TBD   
 
-The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).
+<br/>
+<br/>  
 
-**Move map directoryes to StarCraftII map directory**
+## Acknowledgments
+<hr>
+This work was conducted by Center for Applied Research in Artificial Intelligence (CARAI) grant funded by DAPA and ADD [UD190031RD] and supported by Institute of Information \& communications Technology Planning \& Evaluation (IITP) grant funded by the Korea government (MSIT) [No.2019-0-00075, Artificial Intelligence Graduate School Program (KAIST)].  
 
-Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
+<br/>
+<br/>  
 
-'''shell
-mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
-mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
-'''
-### Run
-
-**Episode mode**
-```shell
-cd ./pymarl
-python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard
-python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z
-```
-
-**Parallel mode**
-```shell
-cd ./pymarl
-python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard runner=parallel batch_size_run=20
-python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runner=parallel batch_size_run=20
-```
-
-The config files act as defaults for an algorithm or environment. 
-
-They are all located in `src/config`.
-`--config` refers to the config files in `src/config/algs`
-`--env-config` refers to the config files in `src/config/envs`
+[Code]: https://github.com/osilab-kaist/smac_plus
