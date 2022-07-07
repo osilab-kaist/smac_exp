@@ -125,28 +125,32 @@ tions.
 ```shell
 git clone https://github.com/osilab-kaist/smac_plus.git
 ```
+
 </br>
 2️⃣ **Download and set up StarCraft II**:
 ```shell
 bash install_sc2.sh
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.  
 </br>
 3️⃣ Install required packages
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After install requirements, install `torch` suitable for the environment.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After install requirements, install `torch` suitable for the environment.  
 </br>
 **4️⃣ Move map directoryes to StarCraftII map directory**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`. 
 
 ```shell
 mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 ```
+
 * You should have a structure like these:
+
+
 ```
 smac_plus
 ├── pymarl
@@ -182,11 +186,11 @@ python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offe
 python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runner=parallel batch_size_run=20
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The config files act as defaults for an algorithm or environment.   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are all located in `src/config`.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--config` refers to the config files in `src/config/algs`.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--env-config` refers to the config files in `src/config/envs`.   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All results will be stored in the `results` folder.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The config files act as defaults for an algorithm or environment.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- They are all located in `src/config`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `--config` refers to the config files in `src/config/algs`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `--env-config` refers to the config files in `src/config/envs`.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- All results will be stored in the `results` folder.   
 
 </br>
 
