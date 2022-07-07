@@ -105,7 +105,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 | `DMIX` | Distributional Value based | [paper](https://arxiv.org/abs/2102.07936) |
 | `DRIMA` | Distributional Value based | [paper](https://openreview.net/forum?id=5qwA7LLbgP0) |
 | `COMA` | Policy Gradient based | [paper](https://arxiv.org/abs/1705.08926) |
-| `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/1801.01290) |
+| `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/2104.06655) |
 | `MADDPG` | Policy Gradient based | [paper](https://arxiv.org/abs/1706.02275) |
 
 </br>
@@ -126,6 +126,7 @@ git clone https://github.com/osilab-kaist/smac_plus.git
 ```
 
 </br>
+
 2️⃣ **Download and set up StarCraft II**
 
 ```shell
