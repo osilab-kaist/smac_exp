@@ -51,7 +51,7 @@ for Multi-Stage Tasks
           </li>
         </a><a href="https://arxiv.org/abs/2207.02007" target="_blank">
           <li>
-            <i class="ai ai-archive-square ai-2x"></i>
+            <i class="ai ai-arxiv-square ai-2x"></i>
           </li>
         </a><a href="mailto:callingu@kaist.ac.kr" target="_blank">
           <li>
@@ -67,64 +67,292 @@ for Multi-Stage Tasks
 
 <p>The StarCraft Multi-Agent Challenges requires agents to learn completion of multi-stage tasks and use of environmental factors without precise reward functions. The previous challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. This challenge, on the other hand, is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control. This study covers both offensive and defensive scenarios. In the offensive scenarios, agents must learn to first find opponents and then eliminate them. The defensive scenarios require agents to use topographic features. For example, agents need to position themselves behind protective structures to make it harder for enemies to attack. We investigate MARL algorithms under SMAC+ and observe that recent approaches work well in similar settings to the previous challenges, but misbehave in offensive scenarios. Additionally, we observe that an enhanced exploration approach has a positive effect on performance but is not able to completely solve all scenarios. This study proposes a new axis of future research.</p>
 
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="/assets/gif/SMAC_plus_off.GIF" alt="gif_off" width="550" /></th>
+      <th style="text-align: center"><img src="/assets/gif/SMAC_plus_def.GIF" alt="gif_def" width="550" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span></em></td>
+      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span></em></td>
+    </tr>
+  </tbody>
+</table>
+
 <p><br /></p>
 
-<h2 id="source-codes">Source Codes</h2>
-<p>Here is the <a href="https://github.com/osilab-kaist/smac_plus">Code</a> for the benchmark and implemented baselines.<br />
-<br /></p>
+<h2 id="paper-and-source-codes">Paper and Source Codes</h2>
+<p>Here is the <a href="https://arxiv.org/abs/2207.02007">Paper</a> and <a href="https://github.com/osilab-kaist/smac_plus">Code</a> for the benchmarks and implemented baselines.</p>
 
-<h2 id="smac-descriptions">SMAC+ Descriptions</h2>
+<p><br /></p>
+
+<h2 id="general-description-of-smac">General Description of SMAC+</h2>
 <hr />
 
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> We need defensive / offensive scenarios overview </span></strong></p>
+<p>This challenge offers advanced environmental factors such as destructible structures that can be used to conceal enemies and terrain features, such as a hill, that may be used to mitigate damages. Also, we newly introduce offensive scenarios that demand sequential completion of multi-stage tasks requiring finding adversaries initially and then eliminating them. Like in SMAC, both defensive and offensive scenarios in SMAC+ employ the reward function proportional to the number of enemies removed.</p>
+
+<h3 id="comparison-between-smac-and-smac">Comparison between <a href="https://arxiv.org/abs/1902.04043">SMAC</a> and <a href="https://arxiv.org/abs/2207.02007">SMAC+</a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Main Issues</th>
+      <th style="text-align: center">SMAC</th>
+      <th style="text-align: center">SMAC+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Agents micro-control</td>
+      <td style="text-align: center">O</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Multi-stage tasks</td>
+      <td style="text-align: center">▵</td>
+      <td style="text-align: center">O</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Environmental factors</td>
+      <td style="text-align: center">▵</td>
+      <td style="text-align: center">O</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h3 id="list-of-environmental-factors-and-multi-stage-tasks-for-both-smac-and-smac">List of environmental factors and multi-stage tasks for both <a href="https://arxiv.org/abs/1902.04043">SMAC</a> and <a href="https://arxiv.org/abs/2207.02007">SMAC+</a></h3>
+
+<p>In SMAC, some difficult scenarios, such as <em>2c_vs_64zg</em> and <em>corridor</em>, require agents to indirectly learn environmental factors, such as exploiting different levels of terrains or discover multi-stage tasks like avoiding rushing enemies first and then eliminating individuals without a specific reward for them. However, those scenarios do not allow quantitative assessment of the algorithm’s exploration capabilities, as they do not accurately reflect the difficulty of the task, which depends on the complexity of multi-stage tasks and the significance of environmental factors.</p>
+
+<p>To address this issue, we propose a new class of the StarCraft Multi-Agent Challenges+ that encompasses advanced and sophisticated multi-stage tasks, and involves environmental factors agents must learn to accomplish, as seen in the table as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">2c_vs_64zg(SMAC)</th>
+      <th style="text-align: center">corridor(SMAC)</th>
+      <th style="text-align: center">Defense(SMAC+)</th>
+      <th style="text-align: center">Offese(SMAC+)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Environmental factors</td>
+      <td style="text-align: center">Different levels of the terrain</td>
+      <td style="text-align: center">Limited sight range of enemies</td>
+      <td style="text-align: center">Destroy obstacles hiding enemies</td>
+      <td style="text-align: center">Approach enemies strategically. Discover a detour. Destory moving impediments</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Multi-stage tasks</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">Avoid enemies first, eliminate individually</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">Identify where enemies place, then exterminate enemies</td>
+    </tr>
+  </tbody>
+</table>
 
 <p><br /><br />
 <br /></p>
 
-<h2 id="smac-benchmarks">SMAC+ Benchmarks</h2>
+<h2 id="defensive-scenarios-in-smac">Defensive Scenarios in SMAC+</h2>
 <hr />
+
+<ul>
+  <li>Graphical explanation of defensive scenarios</li>
+</ul>
+
+<p><img src="/assets/imgs/def/defense_infantry.png" alt="Def_infantry" width="350" />
+<img src="/assets/imgs/def/defense_armored.png" alt="Def_armored" width="350" />
+<img src="/assets/imgs/def/defense_outnumbered.png" alt="Def_outnumbered" width="350" /></p>
+
+<p><br /></p>
+
+<p>In defensive scenarios, we place allies on the hill and adversaries on the plain. We emphasize the importance of agents defeating adversaries utilizing topographical factors. The defensive scenarios in SMAC$^{+}$ are almost identical to those in SMAC. However, our environment expands the exploration range of allies to scout for the direction of offense by allowing enemies to attack in several directions and adding topographical changes. We control the difficulties of the defensive settings as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Scenario</th>
+      <th style="text-align: center">Supply difference</th>
+      <th style="text-align: center">Opponents approach</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Def_infantry</td>
+      <td style="text-align: center">-2</td>
+      <td style="text-align: center">One-sided</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Def_armored</td>
+      <td style="text-align: center">-6</td>
+      <td style="text-align: center">Two-sided</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Def_outnumbered</td>
+      <td style="text-align: center">-9</td>
+      <td style="text-align: center">Two-sided</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="offensive-scenarios-in-smac">Offensive Scenarios in SMAC+</h2>
+<hr />
+
+<ul>
+  <li>Graphical explanation of offensive scenarios</li>
+</ul>
+
+<p><img src="/assets/imgs/off/offense_near.png" alt="Off_near" width="350" />
+<img src="/assets/imgs/off/offense_distant.png" alt="Off_distant" width="350" />
+<img src="/assets/imgs/off/offense_complicated.png" alt="Off_complicated" width="350" /></p>
+
+<p><br /></p>
+
+<p>Offensive scenarios provide learning of multi-stage tasks without direct incentives in MARL challenges. We suggest that agents should accomplish goals incrementally, such as eliminating adversaries after locating them. To observe a clear multi-stage structure, we allocate thirteen supplies to the allies more than the enemies. Hence, as soon as enemies are located, the agents rapidly learn to destroy enemies. As detailed in the previous table, in SMAC+, agents will not have a chance to get a reward if they do not encounter adversaries. This is because there are only three circumstances in which agents can get rewards: when agents defeat an adversary, kill an adversary, or inflict harm on an adversary. As a result, the main challenges necessitate not only micro-management, but also exploration to locate enemies.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Scenario</th>
+      <th style="text-align: center">Distance from opponents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Off_near</td>
+      <td style="text-align: center">Near</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Off_distance</td>
+      <td style="text-align: center">Distant</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Off_complicated</td>
+      <td style="text-align: center">Complicated</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<h2 id="challenging-scenarios-in-smac">Challenging Scenarios in SMAC+</h2>
+<hr />
+
+<ul>
+  <li>Graphical explanation of challenging scenarios</li>
+</ul>
+
+<p><img src="/assets/imgs/cha/offense_hard.png" alt="Off_hard" width="350" />
+<img src="/assets/imgs/cha/offense_superhard.png" alt="Off_superhard" width="350" /></p>
+
+<p>As a result, the main challenges necessitate not only micro-management, but also exploration to locate enemies. For instance, the agents learn to separate the allied troops, locate the enemies, and effectively use armored troops like a long-ranged siege Tank. We measure the exploration strategy of effectively finding the enemy through this scenario. In this study, we examine the efficiency with which MARL algorithms explore to identify enemies by altering distance from them. In addition, to create more challenging scenarios, we show how enemy formation affects difficulty.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Scenario</th>
+      <th style="text-align: center">Supply difference</th>
+      <th style="text-align: center">Opponents formation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Off_hard</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">Spread</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Off_superhard</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">Gather</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /><br />
+<br /></p>
+
+<h2 id="benchmarks">Benchmarks</h2>
+<hr />
+
+<p>To demonstrate the need for assessment of exploration capabilities, we choose eleven algorithms of MARL algorithms classified into three categories; policy gradient algorithms, typical value-based algorithms, and distributional value-based algorithms. First, as an initial study of the MARL domain, policy gradient algorithms such as <a href="https://arxiv.org/abs/1705.08926">COMA</a>, <a href="https://arxiv.org/abs/2104.06655">MASAC</a>, <a href="https://arxiv.org/abs/1706.02275">MADDPG</a> are considered. The typical value-based algorithm including <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.55.8066">IQL</a>, <a href="https://arxiv.org/abs/1706.05296">VDN</a>, <a href="https://arxiv.org/abs/1803.11485">QMIX</a> and <a href="https://arxiv.org/abs/1905.05408">QTRAN</a> are chosen as baselines. Last but not least, we choose <a href="https://arxiv.org/abs/2102.07936">DIQL, DDN, DMIX</a> and <a href="https://openreview.net/forum?id=5qwA7LLbgP0">DRIMA</a> as distributional value-based algorithms that recently reported high performance owing to the effective exploration of difficult scenarios in SMAC.</p>
 
 <h3 id="defensive-sceanrios">Defensive Sceanrios</h3>
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-TBD</p>
 
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-TBD<br />
-<br /></p>
+<p>We first look into defensive scenario experiments on SMAC+ to test whether MARL algorithms not only adequately employ environmental factors but also learn micro-controls. In terms of algorithmic performance, we observe COMA and QMIX drastically degrade, but MADDPG gradually degrades. This fact reveals that MADDPG enables agents to effectively learn micro-control. However, among baselines, DRIMA achieves the highest score and retains performance even when the supply difference significantly increases.</p>
+
+<p>       • <strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
+<img src="/assets/results/def_infantry_sequential.png" alt="Def_infantry" width="350" />
+<img src="/assets/results/def_armored_sequential.png" alt="Def_armored" width="350" />
+<img src="/assets/results/def_outnumbered_sequential.png" alt="Def_outnumbered" width="350" /></p>
+
+<p>       • <strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
+<img src="/assets/results/def_infantry_parallel.png" alt="Def_infantry" width="350" />
+<img src="/assets/results/def_armored_parallel.png" alt="Def_armored" width="350" />
+<img src="/assets/results/def_outnumbered_parallel.png" alt="Def_outnumbered" width="350" /></p>
+
+<p><br /></p>
 
 <h3 id="offensive-sceanrios">Offensive Sceanrios</h3>
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-TBD</p>
 
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-TBD<br />
-<br /></p>
+<p>Regarding to offensive scenarios, we notice considerable performance differences of each baseline. Overall, even if an algorithm attains high scores at a trial, with exception of DRIMA, it is not guaranteed to train reliably in other trials. As mentioned, offensive scenarios do not require as much high micro-control as defensive scenarios, instead, it is important to locate enemies without direct incentives, such that when agents find enemies during training, the win-rate metric immediately goes to a high score. However, the finding enemies during training is decided by random actions drawn by epsilon-greedy or probabilistic policy, resulting in considerable variance in test outcome. In contrast, we see a perfect convergence of DRIMA in all offensive scenarios by employing its efficient exploration.</p>
+
+<p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
+<img src="/assets/results/off_near_sequential.png" alt="Off_near" width="350" />
+<img src="/assets/results/off_distant_sequential.png" alt="Off_distant" width="350" />
+<img src="/assets/results/off_complicated_sequential.png" alt="Off_complicated" width="350" /></p>
+
+<p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
+<img src="/assets/results/off_near_parallel.png" alt="Off_near" width="350" />
+<img src="/assets/results/off_distant_parallel.png" alt="Off_distant" width="350" />
+<img src="/assets/results/off_complicated_parallel.png" alt="Off_complicated" width="350" /></p>
+
+<p><br /></p>
 
 <h3 id="challenging">Challenging</h3>
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-TBD</p>
 
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-TBD<br />
-<br />
-<br /></p>
+<p>To provide open-ended problems for the MARL domain, we suggest more challenging scenarios. In these scenarios, the agents are required to simultaneously learn completion of multi-stage tasks and micro-control during training. We argue that this scenario requires more sophisticated fine manipulation compared to other offensive scenarios. This is due to the fact that not only the strength of allies is identical to that of opponents, but also <em>Gathered</em> enables opponents to intensively strike allies at once. This indicates the necessity of more efficient exploration strategies for the completion of multi-stage tasks and micro-control.</p>
 
-<h2 id="ablation-study">Ablation Study</h2>
-<hr />
+<p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
+<img src="/assets/results/off_hard_sequential.png" alt="Off_hard" width="350" />
+<img src="/assets/results/off_superhard_sequential.png" alt="Off_superhard" width="350" /></p>
 
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Reward Engineering </span></strong><br />
-TBD</p>
-
-<p><strong><span style="font-family:Raleway; font-size:1.0em;"> Heatmaps </span></strong><br />
-TBD</p>
+<p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
+<img src="/assets/results/off_hard_parallel.png" alt="Off_hard" width="350" />
+<img src="/assets/results/off_superhard_parallel.png" alt="Off_superhard" width="350" /></p>
 
 <p><br />
 <br /></p>
 
-<h2 id="smac-future-direction">SMAC+ Future Direction</h2>
+<h2 id="ablation-study--heatmaps-of-agents-movement">Ablation Study : Heatmaps of Agents Movement</h2>
 <hr />
 
-<p>TBD</p>
+<p>Through the heat-maps of movements, we conduct qualitative analysis of each baseline. As illustrated in \autoref{off_complicated_heatmap}, at early stage of COMA only few agents find enemies. When it comes to end stage, agents do not face the opponents. Whereas although the early stage of DRIMA makes agents move around their starting points, its exploration capability makes agents get closer to enemies and finally confront them after training.</p>
+
+<p><img src="/assets/heatmaps/off_near.png" alt="Off_near" width="600" />
+<img src="/assets/heatmaps/off_distant.png" alt="Off_distant" width="600" />
+<img src="/assets/heatmaps/off_complicated.png" alt="Off_complicated" width="600" />
+<img src="/assets/heatmaps/off_hard.png" alt="Off_hard" width="600" />
+<img src="/assets/heatmaps/off_superhard.png" alt="Off_superhard" width="600" /></p>
+
+<p><br />
+<br /></p>
+
+<h2 id="future-direction">Future Direction</h2>
+<hr />
+
+<p>This study takes a look at multi-stage tasks in MARL. We mostly work on two-stage tasks. Two-stage tasks appear somewhat simplistic, but as early stage works, this work provides meaningful direction for exploration capability in MARL domains. We will develop MARL environments with multiple stage tasks in the future. We hope this work serves as a valuable benchmark to evaluate the exploration capabilities of MARL algorithms and give guidance for future research.</p>
 
 <p><br />
 <br /></p>
@@ -132,7 +360,7 @@ TBD</p>
 <h2 id="acknowledgments">Acknowledgments</h2>
 <hr />
 
-<p>This work was conducted by Center for Applied Research in Artificial Intelligence (CARAI) grant funded by DAPA and ADD [UD190031RD] and supported by Institute of Information \&amp; communications Technology Planning \&amp; Evaluation (IITP) grant funded by the Korea government (MSIT) [No.2019-0-00075, Artificial Intelligence Graduate School Program (KAIST)].</p>
+<p>This work was conducted by Center for Applied Research in Artificial Intelligence (CARAI) grant funded by DAPA and ADD (UD190031RD).</p>
 
 <p><br />
 <br /></p>
@@ -148,7 +376,7 @@ TBD</p>
           </li>
         </a><a href="https://arxiv.org/abs/2207.02007" target="_blank">
           <li>
-            <i class="ai ai-archive-square ai-2x"></i>
+            <i class="ai ai-arxiv-square ai-2x"></i>
           </li>
         </a><a href="mailto:callingu@kaist.ac.kr" target="_blank">
           <li>

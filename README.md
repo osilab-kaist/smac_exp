@@ -1,4 +1,4 @@
-# mingyukim87.github.io
+# osilab-kaist.github.io/smac_plus
 
 This GitHub.io page is written by *Plainwhite Theme*  
 
