@@ -9,9 +9,9 @@
 </div>
 
 
-## 🧚 Previews
+## 🧚 Preview
 
-**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**. 
+**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
 Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 *:equal contribution
 
@@ -19,7 +19,8 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 
 ## ✍️ Notice
-PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch. Also, SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.
+PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch.  
+SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.  
 [SMAC+](https://github.com/osilab-kaist/smac_plus) provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.
 
 ## 🆚 SMAC vs SMAC+ 
