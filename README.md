@@ -33,11 +33,11 @@ tions.
 
 * [SMAC+](https://github.com/osilab-kaist/smac_plus) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control.  
 
-|Main issues|SMAC|SMAC+|
-|---|---|----|
-|Agent's micro-control|O|O|
-|Multi-stage tasks|interm|O|
-|Environment factors||O|
+| Main Issues           | SMAC   | SMAC+ |
+|:-----------------------:|:--------:|:-------:|
+| Agents micro-control | O     |  O     |
+| Multi-stage tasks     | ▵ |  O     |
+| Environmental factors  | ▵        |  O     |
 
 </br>
 
@@ -60,6 +60,8 @@ tions.
 | `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
 | `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
 
+</br>
+
 ### **Offense**
 <div align="center">
 
@@ -75,6 +77,8 @@ tions.
 | `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
 | `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
 
+</br>
+
 ### **Challenging**
 <div align="center">
 
@@ -87,6 +91,8 @@ tions.
 |---|---|---|---|
 | `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
 | `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
+
+</br>
 
 ## 🎮 Implemented Algorithms
 | Algorithm | Category | Paper Links|
@@ -102,6 +108,9 @@ tions.
 | `COMA` | Policy Gradient based | [paper](https://arxiv.org/abs/1705.08926) |
 | `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/1801.01290) |
 | `MADDPG` | Policy Gradient based | [paper](https://arxiv.org/abs/1706.02275) |
+
+</br>
+
 ## ⚙️ Installation instructions
 ```diff
 - Please pay attention to the version of SC2 you are using for your experiments. 
@@ -110,34 +119,34 @@ tions.
 - wget http://blzdistsc2-a.akamaihd.net/Linux/SC2.4.6.2.69232.zip
 ```
 
+</br>
+
 **1️⃣ Cloning SMAC_PLUS:**
 ```shell
 git clone https://github.com/osilab-kaist/smac_plus.git
 ```
-
+</br>
 **2️⃣ Download and set up StarCraft II:**
 ```shell
 bash install_sc2.sh
 ```
 
-This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.
-
-
+* This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.
+</br>
 **3️⃣ Install required packages**
 
-The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).
-
-After install requirements, install `torch` suitable for the environment.
-
+* The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).
+* After install requirements, install `torch` suitable for the environment.
+</br>
 **4️⃣ Move map directoryes to StarCraftII map directory**
 
-Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
+* Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
 
 ```shell
 mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 ```
-You should have a structure like these:
+* You should have a structure like these:
 ```
 smac_plus
 ├── pymarl
@@ -156,33 +165,34 @@ smac_plus
 
 ```
 
+</br>
+
 ## 🏃Run an experiment 
-Episode experience buffer
+* Episode experience buffer
 ```shell
 cd ./pymarl
 python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard
 python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z
 ```
 
-Parallel experience beffer
+* Parallel experience beffer
 ```shell
 cd ./pymarl
 python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard runner=parallel batch_size_run=20
 python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runner=parallel batch_size_run=20
 ```
 
-The config files act as defaults for an algorithm or environment. 
+* The config files act as defaults for an algorithm or environment. 
+* They are all located in `src/config`.
+* `--config` refers to the config files in `src/config/algs`
+* `--env-config` refers to the config files in `src/config/envs`
+* All results will be stored in the `results` folder.
 
-They are all located in `src/config`.
-
-`--config` refers to the config files in `src/config/algs`
-`--env-config` refers to the config files in `src/config/envs`
-
-All results will be stored in the `results` folder.
+</br>
 
 ## 🤝 License
 
-Code licensed under the Apache License v2.0
+* Code licensed under the Apache License v2.0
 
 ## 📌 Citation
 ```bibtext
