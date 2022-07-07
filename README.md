@@ -133,7 +133,7 @@ git clone https://github.com/osilab-kaist/smac_plus.git
 bash install_sc2.sh
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.  
 
 </br>
 
