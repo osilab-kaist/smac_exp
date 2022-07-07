@@ -182,11 +182,11 @@ python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offe
 python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runner=parallel batch_size_run=20
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The config files act as defaults for an algorithm or environment. 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are all located in `src/config`.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--config` refers to the config files in `src/config/algs`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--env-config` refers to the config files in `src/config/envs`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All results will be stored in the `results` folder.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The config files act as defaults for an algorithm or environment.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They are all located in `src/config`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--config` refers to the config files in `src/config/algs`.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--env-config` refers to the config files in `src/config/envs`.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All results will be stored in the `results` folder.   
 
 </br>
 
