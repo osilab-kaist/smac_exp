@@ -196,6 +196,8 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- `--env-config` refers to the config files in `src/config/envs`.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- All results will be stored in the `results` folder.   
 
+</br>
+
 ## 🤝 License
 
 * The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC+ environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
