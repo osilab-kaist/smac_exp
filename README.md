@@ -4,9 +4,9 @@
     
 **Bechmarks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
 
-| ![gif_off](/image/gif/SMAC_plus_off.GIF){: width="550" } | ![gif_def](/image/gif/SMAC_plus_def.GIF){: width="550"} |  
+| ![gif_off](/images/SMAC_plus_off.GIF) | ![gif_def](/images/SMAC_plus_def.GIF) |  
 |:--:| |:--:| 
-| *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span>*  | *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Defense </span>* |
+|*SMAC_Offense*   | *SMAC_Defense* |
 
     
 ---
