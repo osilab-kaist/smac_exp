@@ -4,7 +4,10 @@
     
 **Bechmarks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
 
-![gif_off](/images/SMAC_plus_off.GIF){: width="45%"} ![gif_def](/images/SMAC_plus_def.GIF){: width="45%"} 
+<img src="/images/SMAC_plus_off.GIF" width="45%"> <img src="/images/SMAC_plus_def.GIF" width="45%">
+    
+    
+<!-- ![gif_off](/images/SMAC_plus_off.GIF){: width="45%"} ![gif_def](/images/SMAC_plus_def.GIF){: width="45%"}  -->
 
     
 ---
