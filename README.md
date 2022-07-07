@@ -2,7 +2,7 @@
     
 # SMAC+
     
-**Efficient Exploration Bechamrks for Learning of Multi-stage Tasks and Environmental Factors without Precise Reward Functions**
+**Bechamrks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors without Precise Reward Functions**
 
     
 ---
@@ -11,8 +11,8 @@
 
 ## 🧚 Authors & Links
 
-**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**
-_Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun. 
+**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**. 
+Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 *:equal contribution
 
 The detailed information are inllustrated in [[Paper](https://arxiv.org/abs/2207.02007)], 
