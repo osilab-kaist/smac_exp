@@ -28,10 +28,9 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 </br>
 
 ## 🆚 SMAC vs SMAC+ 
-* [SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. SMAC are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward func
-tions.  
+* [SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. It is mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions.  
 
-* [SMAC+](https://github.com/osilab-kaist/smac_plus) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control.  
+* [SMAC+](https://github.com/osilab-kaist/smac_plus) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicitly multi-stage tasks and environmental factors as well as micro-control.  
 
 | Main Issues           | SMAC   | SMAC+ |
 |:-----------------------:|:--------:|:-------:|
