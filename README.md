@@ -2,7 +2,7 @@
     
 # SMAC+
     
-**Bechamrks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors without Precise Reward Functions**
+**Bechamrks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
 
     
 ---
