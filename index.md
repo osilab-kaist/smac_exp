@@ -8,7 +8,7 @@ The StarCraft Multi-Agent Challenges requires agents to learn completion of mult
 
 | ![gif_off](/assets/gif/SMAC_plus_off.GIF){: width="550" } | ![gif_def](/assets/gif/SMAC_plus_def.GIF){: width="550"} |  
 |:--:| |:--:| 
-| *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span>*  | *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span>* |
+| *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span>*  | *<span style="font-family:Raleway; font-size:0.9em;"> SMAC_Defense </span>* |
 
 <br/>
 
