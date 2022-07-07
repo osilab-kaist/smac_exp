@@ -200,7 +200,7 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 
 ## 🤝 License
 
-* Code licensed under the Apache License v2.0
+* The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC+ environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
 
 ## 📌 Citation
 ```bibtext
