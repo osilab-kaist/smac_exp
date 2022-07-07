@@ -18,18 +18,20 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 * Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 
+</br>
+
 ## ✍️ Notice
-PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch.  
-SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.  
-[SMAC+](https://github.com/osilab-kaist/smac_plus) provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.
+* [PyMARL](http://whirl.cs.ox.ac.uk) : The framework for deep multi-agent reinforcement learning with PyTorch.  
+* [SMAC](https://github.com/oxwhirl/smac) : The environments for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.  
+* [SMAC+](https://github.com/osilab-kaist/smac_plus) : It provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.  
+
+</br>
 
 ## 🆚 SMAC vs SMAC+ 
-SMAC+ contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. 
+* [SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. SMAC are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward func
+tions.  
 
-[SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. SMAC are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward func
-tions. 
-
-[SMAC+](https://github.com/osilab-kaist/smac_plus) is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control.
+* [SMAC+](https://github.com/osilab-kaist/smac_plus) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control.  
 
 |Main issues|SMAC|SMAC+|
 |---|---|----|
@@ -37,8 +39,11 @@ tions.
 |Multi-stage tasks|interm|O|
 |Environment factors||O|
 
+</br>
+
 ## 🌏 Maps
-SG, Mar and M refer each Siege Tank, Marauder, Marine units.
+* SG, Mar and M refer each Siege Tank, Marauder, Marine units.  
+
 ### **Defense**
 <div align="center">
 
