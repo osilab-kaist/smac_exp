@@ -95,7 +95,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 
 ## 🎮 Implemented Algorithms
 | Algorithm | Category | Paper Links|
-|---|---|---|
+|:---:|:---:|:---:|
 | `IQL` | Value based | [paper](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.55.8066)|
 | `VDN` | Value based |  [paper](https://arxiv.org/abs/1706.05296)|
 | `QTRAN` | Value based |  [paper](https://arxiv.org/abs/1905.05408)|
