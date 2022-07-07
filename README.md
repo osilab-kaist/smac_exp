@@ -9,7 +9,7 @@
 </div>
 
 
-## 🧚 Detailed information
+## 🧚 Previews
 
 **[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**. 
 Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
