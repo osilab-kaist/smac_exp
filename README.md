@@ -1,40 +1,90 @@
-```diff
-- Please pay attention to the version of SC2 you are using for your experiments. 
-- Performance is *not* always comparable between versions. 
-- The results in SMAC (https://arxiv.org/abs/1902.04043) use SC2.4.6.2.69232 not SC2.4.10.
-- wget http://blzdistsc2-a.akamaihd.net/Linux/SC2.4.6.2.69232.zip
-```
-
+<div align="center">
+    
 # SMAC+
+    
+**An open source benchmark for Multi Agent Reinforcement Learning**
 
-PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch.
-[SMAC Plus](https://github.com/MingyuKim87/smac_plus) provides its environment and exceutes training and testing RL algorithms based on PyMARL.
+    
+---
+</div>
 
-## Installation instructions
-Git clone SMAC_PLUS:
-```shell
-git clone https://github.com/osilab-kaist/smac_plus.git
-```
 
-## Download StarCraft II
-Set up StarCraft II:
-```shell
-bash install_sc2.sh
-```
+## 🧚 Authors & Links
 
-This will download SC2 into the `pymarl/3rdparty` folder.
+**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**
 
-The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recomended).
+_Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun_
 
-## Move map directoryes to StarCraftII map directory 
+*:equal contribution
 
-Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
+Benchmarking report is in
+[[Project Page](https://osilab-kaist.github.io/smac_plus/)], [[Paperswithcode](https://paperswithcode.com/dataset/smac-plus)]
 
-```shell
-mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
-mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
-```
-## Implemented Algorithms
+## ✍️ notice
+PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch. Also, SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.
+[SMAC+](https://github.com/osilab-kaist/smac_plus) provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.
+
+## 🆚 SMAC vs SMAC+ 
+It contains 8 maps seperated to `defense`, `offense`, `challenging`. 
+
+[SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. SMAC are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward func
+tions. 
+
+[SMAC+](https://github.com/osilab-kaist/smac_plus) is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control.
+
+|Main issues|SMAC|SMAC+|
+|---|---|----|
+|Agent's micro-control|O|O|
+|Multi-stage tasks|interm|O|
+|Environment factors||O|
+
+## 🌏 Maps
+SG, Mar and M refer each Siege Tank, Marauder, Marine units.
+### **Defense**
+<div align="center">
+
+<img src="./images/defense_infantry.png" alt="drawing" width="200"/>
+<img src="./images/defense_armored.png" alt="drawing" width="200"/>
+<img src="./images/defense_outnumbered.png" alt="drawing" width="200"/>
+
+
+</div>
+
+| Name | Ally Units | Enemy Units | Opponents approach |
+|---|---|---|---|
+| `defense_infantry` | 1 Mar & 4 M | 1 Mar & 6 M | One-sided |
+| `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
+| `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
+
+### **Offense**
+<div align="center">
+
+<img src="./images/offense_near.png" alt="drawing" width="200"/>
+<img src="./images/offense_distant.png" alt="drawing" width="200"/>
+<img src="./images/offense_complicated.png" alt="drawing" width="200"/>
+
+</div>
+
+| Name | Ally Units | Enemy Units | Distance & formation |
+|---|---|---|---|
+| `offense_near` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Near & Spread |
+| `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
+| `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+
+### **Challenging**
+<div align="center">
+
+<img src="./images/offense_hard.png" alt="drawing" width="200"/>
+<img src="./images/offense_superhard.png" alt="drawing" width="200"/>
+
+</div>
+
+| Name | Ally Units | Enemy Units | Distance & formation |
+|---|---|---|---|
+| `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+| `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
+
+## 🎮 Implemented Algorithms
 | Algorithm | Category | Paper Links|
 |---|---|---|
 | `IQL` | Value based | [paper](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.55.8066)|
@@ -48,37 +98,69 @@ mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 | `COMA` | Policy Gradient based | [paper](https://arxiv.org/abs/1705.08926) |
 | `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/1801.01290) |
 | `MADDPG` | Policy Gradient based | [paper](https://arxiv.org/abs/1706.02275) |
+## ⚙️ Installation instructions
+```diff
+- Please pay attention to the version of SC2 you are using for your experiments. 
+- Performance is *not* always comparable between versions. 
+- The results in SMAC (https://arxiv.org/abs/1902.04043) use SC2.4.6.2.69232 not SC2.4.10.
+- wget http://blzdistsc2-a.akamaihd.net/Linux/SC2.4.6.2.69232.zip
+```
 
-## Maps
-### Defense
-| Name | Ally Units | Enemy Units | Opponents approach |
-|---|---|---|---|
-| `defense_infantry` | 1 Mar & 4 M | 1 Mar & 6 M | One-sided |
-| `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
-| `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
+**1️⃣ Cloning SMAC_PLUS:**
+```shell
+git clone https://github.com/osilab-kaist/smac_plus.git
+```
 
-### Offense
-| Name | Ally Units | Enemy Units | Distance & formation |
-|---|---|---|---|
-| `offense_near` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Near & Spread |
-| `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
-| `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
+**2️⃣ Download and set up StarCraft II:**
+```shell
+bash install_sc2.sh
+```
 
-### Challenging
-| Name | Ally Units | Enemy Units | Distance & formation |
-|---|---|---|---|
-| `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
-| `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
+This will download SC2 into the `pymarl/3rdparty` folder, or using symbolic link to use SC2.
 
-## Run an experiment 
-Episode mode
+
+**3️⃣ Install required packages**
+
+The `requirements.txt` file can be used to install the necessary packages into a virtual environment (not recommended).
+
+After install requirements, install `torch` suitable for the environment.
+
+**4️⃣ Move map directoryes to StarCraftII map directory**
+
+Move `SMAC_Maps` / `SMAC_Plus_Maps` directories to `StarCraftII/Maps/`
+
+```shell
+mv SMAC_Plus_Maps ./pymarl/3rdparty/StarCraftII/Maps/
+mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
+```
+You should have a structure like these:
+```
+smac_plus
+├── pymarl
+│   ├── docker
+│   ├── 3rdparty
+│   │   └── StarCraftII 
+│   │       ├── Maps
+│   │       │   ├── SMAC_Maps
+│   │       │   └── SMAC_Plus_Maps
+│   │       └── ...
+│   ├── src
+│   └── results
+├── smac_plus
+├── requirements.txt
+└── install_sc2.sh
+
+```
+
+## 🏃Run an experiment 
+Episode experience buffer
 ```shell
 cd ./pymarl
 python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard
 python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z
 ```
 
-Parallel mode
+Parallel experience beffer
 ```shell
 cd ./pymarl
 python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard runner=parallel batch_size_run=20
@@ -88,13 +170,25 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 The config files act as defaults for an algorithm or environment. 
 
 They are all located in `src/config`.
+
 `--config` refers to the config files in `src/config/algs`
 `--env-config` refers to the config files in `src/config/envs`
 
-All results will be stored in the `Results` folder.
+All results will be stored in the `results` folder.
 
+## 🤝 License
 
+Code licensed under the Apache License v2.0
 
+## 📌 Citation
+```bibtext
+@article{kim2022smacplus,
+  title={The StarCraft Multi-Agent Challenges+ : Learning of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions},
+  author={Mingyu Kim, Jihwan Oh, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun},
+  journal={arXiv preprint arXiv:2207.02007},
+  year={2022}
+}
+```
 <!-- ## Saving and loading learnt models
 
 ### Saving models
