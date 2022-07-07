@@ -13,7 +13,7 @@
 
 **[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
 Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
-*:equal contribution
+(\*:equal contribution)
 
 * Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
