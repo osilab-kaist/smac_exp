@@ -21,7 +21,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 </br>
 
 ## ✍️ Notice
-* [PyMARL](http://whirl.cs.ox.ac.uk) : The framework for deep multi-agent reinforcement learning with PyTorch.  
+* [PyMARL](https://github.com/oxwhirl/pymarl) : The framework for deep multi-agent reinforcement learning with PyTorch.  
 * [SMAC](https://github.com/oxwhirl/smac) : The environments for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.  
 * [SMAC+](https://github.com/osilab-kaist/smac_plus) : It provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.  
 
@@ -54,7 +54,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 </div>
 
 | Name | Ally Units | Enemy Units | Opponents approach |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | `defense_infantry` | 1 Mar & 4 M | 1 Mar & 6 M | One-sided |
 | `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
 | `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
@@ -71,7 +71,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 </div>
 
 | Name | Ally Units | Enemy Units | Distance & formation |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | `offense_near` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Near & Spread |
 | `offense_distant` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Distant & Spread |
 | `offense_complicated` |  3 SG Tank, 3 Tank, 3 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
@@ -87,7 +87,7 @@ Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se
 </div>
 
 | Name | Ally Units | Enemy Units | Distance & formation |
-|---|---|---|---|
+|:---:|:---:|:---:|:---:|
 | `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
 | `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
 
