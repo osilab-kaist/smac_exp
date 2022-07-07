@@ -17,8 +17,8 @@ _Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, S
 
 *:equal contribution
 
-Benchmarking report is in
-[[Project Page](https://osilab-kaist.github.io/smac_plus/)], [[Paperswithcode](https://paperswithcode.com/dataset/smac-plus)]
+The detailed information are inllustrated in [[Paper](https://arxiv.org/abs/2207.02007)], 
+[[Project Page](https://osilab-kaist.github.io/smac_plus/)] and [[Paperswithcode](https://paperswithcode.com/dataset/smac-plus)]
 
 ## ✍️ notice
 PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch. Also, SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.
