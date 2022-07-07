@@ -15,8 +15,8 @@
 Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 *:equal contribution
 
-* Project Page URL : [[https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)]
-* Paperwithcodes : [[https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)]
+* Project Page URL : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
+* Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 
 ## ✍️ Notice
 PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent reinforcement learning with PyTorch. Also, SMAC is [WhiRL](https://github.com/oxwhirl/smac)'s environment for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.
