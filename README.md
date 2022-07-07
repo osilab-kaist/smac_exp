@@ -1,6 +1,6 @@
 <div align="center">
     
-# SMAC+
+# The StarCraft Multi-Agent Challenges+
     
 **Bechamrks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
 
@@ -9,13 +9,13 @@
 </div>
 
 
-## 🧚 Authors & Links
+## 🧚 Detailed information
 
 **[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**. 
 Mingyu Kim*, Jihwan Oh*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 *:equal contribution
 
-* Project Page URL : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
+* Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 
 ## ✍️ Notice
@@ -23,7 +23,7 @@ PyMARL is [WhiRL](http://whirl.cs.ox.ac.uk)'s framework for deep multi-agent rei
 [SMAC+](https://github.com/osilab-kaist/smac_plus) provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.
 
 ## 🆚 SMAC vs SMAC+ 
-It contains 8 maps seperated to `defense`, `offense`, `challenging`. 
+SMAC+ contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. 
 
 [SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. SMAC are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward func
 tions. 
