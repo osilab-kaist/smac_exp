@@ -2,7 +2,7 @@
     
 # The StarCraft Multi-Agent Challenges+
     
-**Bechamrks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
+**Bechmarks for Efficient Exploration of Completion of Multi-stage Tasks and Usage of Environmental Factors**
 
     
 ---
