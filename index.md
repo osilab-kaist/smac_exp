@@ -39,10 +39,21 @@ In SMAC, some difficult scenarios, such as *2c\_vs\_64zg* and *corridor*, requir
 To address this issue, we propose a new class of the StarCraft Multi-Agent Challenges+ that encompasses advanced and sophisticated multi-stage tasks, and involves environmental factors agents must learn to accomplish, as seen in the table as follows.
 
 
-|                       |        2c_vs_64zg(SMAC)        |               corridor(SMAC)               |          Defense(SMAC+)         |                                 Offese(SMAC+)                                |
-|:-----------------------:|:-------------------------------:|:-------------------------------------------:|:--------------------------------:|:-----------------------------------------------------------------------------:|
-| Environmental factors | Different levels of the terrain |        Limited sight range of enemies       | Destroy obstacles hiding enemies | Approach enemies strategically. Discover a detour. Destory moving impediments |
-| Multi-stage tasks     |                -                | Avoid enemies first, eliminate individually |                 -                |             Identify where enemies place, then exterminate enemies            |
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **[SMAC]**
+
+|                       |        2c_vs_64zg        |               Corridor               |
+|:-----------------------:|:-------------------------------:|:-------------------------------------------:|
+| Environmental factors | Different levels of the terrain |        Limited sight range of enemies       | 
+| Multi-stage tasks     |                -                | Avoid enemies first, eliminate individually | 
+
+<br/>  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **[SMAC+]**
+
+|                       |                  Defense         |                                 Offese                                |
+|:-----------------------:|:-------------------------------:|:-------------------------------------------:|
+| Environmental factors |  Destroy obstacles hiding enemies |   Approach enemies strategically<br/> Discover a detour<br/> Destory moving impediments |
+| Multi-stage tasks     |                  -                |             Identify where enemies place, then exterminate enemies            |
 
 <br/>  
 <br/>  
