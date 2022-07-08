@@ -172,7 +172,7 @@ To provide open-ended problems for the MARL domain, we suggest more challenging 
 
 ## Ablation Study : Heatmaps of Agents Movement
 <hr>
-Through the heat-maps of movements, we conduct qualitative analysis of each baseline. As illustrated in \autoref{off_complicated_heatmap}, at early stage of COMA only few agents find enemies. When it comes to end stage, agents do not face the opponents. Whereas although the early stage of DRIMA makes agents move around their starting points, its exploration capability makes agents get closer to enemies and finally confront them after training.  
+Through the heat-maps of movements, we conduct qualitative analysis of each baseline. As illustrated in the heatmaps, at early stage of COMA only few agents find enemies. When it comes to end stage, agents do not face the opponents. Whereas although the early stage of DRIMA makes agents move around their starting points, its exploration capability makes agents get closer to enemies and finally confront them after training.  
 
 ![Off_near](/assets/heatmaps/off_near.png){: width="600" }
 ![Off_distant](/assets/heatmaps/off_distant.png){: width="600" }
