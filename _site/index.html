@@ -76,8 +76,8 @@ for Multi-Stage Tasks
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span></em></td>
-      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC_Offense </span></em></td>
+      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC+_Offense </span></em></td>
+      <td style="text-align: center"><em><span style="font-family:Raleway; font-size:0.9em;"> SMAC+_Defense </span></em></td>
     </tr>
   </tbody>
 </table>
@@ -131,14 +131,14 @@ for Multi-Stage Tasks
 
 <p>To address this issue, we propose a new class of the StarCraft Multi-Agent Challenges+ that encompasses advanced and sophisticated multi-stage tasks, and involves environmental factors agents must learn to accomplish, as seen in the table as follows.</p>
 
+<p>       • <strong><a href="https://arxiv.org/abs/1902.04043">SMAC</a></strong></p>
+
 <table>
   <thead>
     <tr>
       <th style="text-align: center"> </th>
-      <th style="text-align: center">2c_vs_64zg(SMAC)</th>
-      <th style="text-align: center">corridor(SMAC)</th>
-      <th style="text-align: center">Defense(SMAC+)</th>
-      <th style="text-align: center">Offese(SMAC+)</th>
+      <th style="text-align: center">2c_vs_64zg</th>
+      <th style="text-align: center">Corridor</th>
     </tr>
   </thead>
   <tbody>
@@ -146,13 +146,35 @@ for Multi-Stage Tasks
       <td style="text-align: center">Environmental factors</td>
       <td style="text-align: center">Different levels of the terrain</td>
       <td style="text-align: center">Limited sight range of enemies</td>
-      <td style="text-align: center">Destroy obstacles hiding enemies</td>
-      <td style="text-align: center">Approach enemies strategically. Discover a detour. Destory moving impediments</td>
     </tr>
     <tr>
       <td style="text-align: center">Multi-stage tasks</td>
       <td style="text-align: center">-</td>
       <td style="text-align: center">Avoid enemies first, eliminate individually</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>       • <strong><a href="https://arxiv.org/abs/2207.02007">SMAC+</a></strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Defense</th>
+      <th style="text-align: center">Offese</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Environmental factors</td>
+      <td style="text-align: center">Destroy obstacles hiding enemies</td>
+      <td style="text-align: center">Approach enemies strategically<br /> Discover a detour<br /> Destory moving impediments</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Multi-stage tasks</td>
       <td style="text-align: center">-</td>
       <td style="text-align: center">Identify where enemies place, then exterminate enemies</td>
     </tr>
@@ -169,9 +191,9 @@ for Multi-Stage Tasks
   <li>Graphical explanation of defensive scenarios</li>
 </ul>
 
-<p><img src="/assets/imgs/def/defense_infantry.png" alt="Def_infantry" width="350" />
-<img src="/assets/imgs/def/defense_armored.png" alt="Def_armored" width="350" />
-<img src="/assets/imgs/def/defense_outnumbered.png" alt="Def_outnumbered" width="350" /></p>
+<p><img src="/assets/imgs/def/defense_infantry.png" alt="Def_infantry" width="33%" />
+<img src="/assets/imgs/def/defense_armored.png" alt="Def_armored" width="33%" />
+<img src="/assets/imgs/def/defense_outnumbered.png" alt="Def_outnumbered" width="33%" /></p>
 
 <p><br /></p>
 
@@ -213,9 +235,9 @@ for Multi-Stage Tasks
   <li>Graphical explanation of offensive scenarios</li>
 </ul>
 
-<p><img src="/assets/imgs/off/offense_near.png" alt="Off_near" width="350" />
-<img src="/assets/imgs/off/offense_distant.png" alt="Off_distant" width="350" />
-<img src="/assets/imgs/off/offense_complicated.png" alt="Off_complicated" width="350" /></p>
+<p><img src="/assets/imgs/off/offense_near.png" alt="Off_near" width="33%" />
+<img src="/assets/imgs/off/offense_distant.png" alt="Off_distant" width="33%" />
+<img src="/assets/imgs/off/offense_complicated.png" alt="Off_complicated" width="33%" /></p>
 
 <p><br /></p>
 
@@ -253,8 +275,8 @@ for Multi-Stage Tasks
   <li>Graphical explanation of challenging scenarios</li>
 </ul>
 
-<p><img src="/assets/imgs/cha/offense_hard.png" alt="Off_hard" width="350" />
-<img src="/assets/imgs/cha/offense_superhard.png" alt="Off_superhard" width="350" /></p>
+<p><img src="/assets/imgs/cha/offense_hard.png" alt="Off_hard" width="40%" />
+<img src="/assets/imgs/cha/offense_superhard.png" alt="Off_superhard" width="40%" /></p>
 
 <p>As a result, the main challenges necessitate not only micro-management, but also exploration to locate enemies. For instance, the agents learn to separate the allied troops, locate the enemies, and effectively use armored troops like a long-ranged siege Tank. We measure the exploration strategy of effectively finding the enemy through this scenario. In this study, we examine the efficiency with which MARL algorithms explore to identify enemies by altering distance from them. In addition, to create more challenging scenarios, we show how enemy formation affects difficulty.</p>
 
@@ -293,14 +315,20 @@ for Multi-Stage Tasks
 <p>We first look into defensive scenario experiments on SMAC+ to test whether MARL algorithms not only adequately employ environmental factors but also learn micro-controls. In terms of algorithmic performance, we observe COMA and QMIX drastically degrade, but MADDPG gradually degrades. This fact reveals that MADDPG enables agents to effectively learn micro-control. However, among baselines, DRIMA achieves the highest score and retains performance even when the supply difference significantly increases.</p>
 
 <p>       • <strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-<img src="/assets/results/def_infantry_sequential.png" alt="Def_infantry" width="350" />
-<img src="/assets/results/def_armored_sequential.png" alt="Def_armored" width="350" />
-<img src="/assets/results/def_outnumbered_sequential.png" alt="Def_outnumbered" width="350" /></p>
+<img src="/assets/results/def_infantry_sequential.png" alt="Def_infantry" width="33%" />
+<img src="/assets/results/def_armored_sequential.png" alt="Def_armored" width="33%" />
+<img src="/assets/results/def_outnumbered_sequential.png" alt="Def_outnumbered" width="33%" /></p>
 
 <p>       • <strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-<img src="/assets/results/def_infantry_parallel.png" alt="Def_infantry" width="350" />
-<img src="/assets/results/def_armored_parallel.png" alt="Def_armored" width="350" />
-<img src="/assets/results/def_outnumbered_parallel.png" alt="Def_outnumbered" width="350" /></p>
+<img src="/assets/results/def_infantry_parallel.png" alt="Def_infantry" width="33%" />
+<img src="/assets/results/def_armored_parallel.png" alt="Def_armored" width="33%" />
+<img src="/assets/results/def_outnumbered_parallel.png" alt="Def_outnumbered" width="33%" /></p>
+
+<p><br /></p>
+
+<iframe width="370" height="205" src="https://www.youtube.com/embed/slZviX1SARE" title="SMAC+: Def Infantry" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe width="370" height="205" src="https://www.youtube.com/embed/rsVDBjB83fY" title="SMAC+:  Def Armored" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe width="370" height="205" src="https://www.youtube.com/embed/Ys4kF-cSdYQ" title="SMAC+: Def Outnumbered" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p><br /></p>
 
@@ -309,14 +337,26 @@ for Multi-Stage Tasks
 <p>Regarding to offensive scenarios, we notice considerable performance differences of each baseline. Overall, even if an algorithm attains high scores at a trial, with exception of DRIMA, it is not guaranteed to train reliably in other trials. As mentioned, offensive scenarios do not require as much high micro-control as defensive scenarios, instead, it is important to locate enemies without direct incentives, such that when agents find enemies during training, the win-rate metric immediately goes to a high score. However, the finding enemies during training is decided by random actions drawn by epsilon-greedy or probabilistic policy, resulting in considerable variance in test outcome. In contrast, we see a perfect convergence of DRIMA in all offensive scenarios by employing its efficient exploration.</p>
 
 <p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-<img src="/assets/results/off_near_sequential.png" alt="Off_near" width="350" />
-<img src="/assets/results/off_distant_sequential.png" alt="Off_distant" width="350" />
-<img src="/assets/results/off_complicated_sequential.png" alt="Off_complicated" width="350" /></p>
+<img src="/assets/results/off_near_sequential.png" alt="Off_near" width="33%" />
+<img src="/assets/results/off_distant_sequential.png" alt="Off_distant" width="33%" />
+<img src="/assets/results/off_complicated_sequential.png" alt="Off_complicated" width="33%" /></p>
 
 <p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-<img src="/assets/results/off_near_parallel.png" alt="Off_near" width="350" />
-<img src="/assets/results/off_distant_parallel.png" alt="Off_distant" width="350" />
-<img src="/assets/results/off_complicated_parallel.png" alt="Off_complicated" width="350" /></p>
+<img src="/assets/results/off_near_parallel.png" alt="Off_near" width="33%" />
+<img src="/assets/results/off_distant_parallel.png" alt="Off_distant" width="33%" />
+<img src="/assets/results/off_complicated_parallel.png" alt="Off_complicated" width="33%" /></p>
+
+<p><br /></p>
+
+<iframe width="370" height="205" src="https://www.youtube.com/embed/4KVZboNel_0" title="SMAC+: Off near" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="370" height="205" src="https://www.youtube.com/embed/rLIdx_JIA30" title="SMAC+: Off Distant" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<iframe width="370" height="205" src="https://www.youtube.com/embed/1LjmT88iNJw" title="SMAC+: Off Complicated" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<!-- <iframe width="400" height="444" src="https://www.youtube.com/embed/4KVZboNel_0" title="SMAC+: Off near" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="400" height="444" src="https://www.youtube.com/embed/rLIdx_JIA30" title="SMAC+: Off Distant" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="400" height="444" src="https://www.youtube.com/embed/1LjmT88iNJw" title="SMAC+: Off Complicated" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 <p><br /></p>
 
@@ -325,12 +365,17 @@ for Multi-Stage Tasks
 <p>To provide open-ended problems for the MARL domain, we suggest more challenging scenarios. In these scenarios, the agents are required to simultaneously learn completion of multi-stage tasks and micro-control during training. We argue that this scenario requires more sophisticated fine manipulation compared to other offensive scenarios. This is due to the fact that not only the strength of allies is identical to that of opponents, but also <em>Gathered</em> enables opponents to intensively strike allies at once. This indicates the necessity of more efficient exploration strategies for the completion of multi-stage tasks and micro-control.</p>
 
 <p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span></strong><br />
-<img src="/assets/results/off_hard_sequential.png" alt="Off_hard" width="350" />
-<img src="/assets/results/off_superhard_sequential.png" alt="Off_superhard" width="350" /></p>
+<img src="/assets/results/off_hard_sequential.png" alt="Off_hard" width="40%" />
+<img src="/assets/results/off_hard_parallel.png" alt="Off_superhard" width="40%" /></p>
 
 <p>       •<strong><span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span></strong><br />
-<img src="/assets/results/off_hard_parallel.png" alt="Off_hard" width="350" />
-<img src="/assets/results/off_superhard_parallel.png" alt="Off_superhard" width="350" /></p>
+<img src="/assets/results/off_superhard_sequential.png" alt="Off_hard" width="40%" />
+<img src="/assets/results/off_superhard_parallel.png" alt="Off_superhard" width="40%" /></p>
+
+<p><br /></p>
+
+<iframe width="370" height="205" src="https://www.youtube.com/embed/IhMnoA7-FYo" title="SMAC+: Off hard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe width="370" height="205" src="https://www.youtube.com/embed/yNsphTrXwY4" title="SMAC+: Off Superhard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <p><br />
 <br /></p>
@@ -338,7 +383,7 @@ for Multi-Stage Tasks
 <h2 id="ablation-study--heatmaps-of-agents-movement">Ablation Study : Heatmaps of Agents Movement</h2>
 <hr />
 
-<p>Through the heat-maps of movements, we conduct qualitative analysis of each baseline. As illustrated in \autoref{off_complicated_heatmap}, at early stage of COMA only few agents find enemies. When it comes to end stage, agents do not face the opponents. Whereas although the early stage of DRIMA makes agents move around their starting points, its exploration capability makes agents get closer to enemies and finally confront them after training.</p>
+<p>Through the heat-maps of movements, we conduct qualitative analysis of each baseline. As illustrated in the heatmaps, at early stage of COMA only few agents find enemies. When it comes to end stage, agents do not face the opponents. Whereas although the early stage of DRIMA makes agents move around their starting points, its exploration capability makes agents get closer to enemies and finally confront them after training.</p>
 
 <p><img src="/assets/heatmaps/off_near.png" alt="Off_near" width="600" />
 <img src="/assets/heatmaps/off_distant.png" alt="Off_distant" width="600" />
