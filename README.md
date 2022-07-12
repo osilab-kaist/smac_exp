@@ -23,6 +23,7 @@
 [Mingyu Kim\*](https://mingyukim87.github.io), Jihwan Oh\*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 (\*:equal contribution)
 
+* Paper : [https://arxiv.org/abs/2207.02007](https://arxiv.org/abs/2207.02007)
 * Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 
