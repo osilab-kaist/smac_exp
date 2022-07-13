@@ -26,7 +26,7 @@
 * Paper : [https://arxiv.org/abs/2207.02007](https://arxiv.org/abs/2207.02007)
 * Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
-* Log and checkpoints : [https://www.dropbox.com/sh/mo8ys4fyj1cvfaz/AAAMOxklfeLoG4lE2by9YyJMa?dl=0](https://www.dropbox.com/sh/mo8ys4fyj1cvfaz/AAAMOxklfeLoG4lE2by9YyJMa?dl=0)
+* Logs and checkpoints : [https://www.dropbox.com/sh/mo8ys4fyj1cvfaz/AAAMOxklfeLoG4lE2by9YyJMa?dl=0](https://www.dropbox.com/sh/mo8ys4fyj1cvfaz/AAAMOxklfeLoG4lE2by9YyJMa?dl=0)
 
 </br>
 
