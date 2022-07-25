@@ -219,12 +219,12 @@ Par : Parallel experience buffer
 Seq : Sequential experience buffer
 ```
 
-O : Exsistence of tensorboard logs and checkpoints
-▵ : Exsitence of either tensorboard logs and checkpoints
-X : Absence of tensorboard logs and checkpoints
+O : Exsistence of tensorboard logs and checkpoints. 
+▵ : Exsitence of either tensorboard logs and checkpoints. 
+X : Absence of tensorboard logs and checkpoints. 
 
 
-### Defense scenarios
+#### Defense scenarios
 
 |        | (Par)Def_infantry |   |   | (Par)Def_armored |   |   | (Par)Def_outnumbered |   |   |
 |:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
@@ -257,7 +257,7 @@ X : Absence of tensorboard logs and checkpoints
 
 </br>
 
-### Offensive scenarios
+#### Offensive scenarios
 
 |        | (Par)Off_near |   |   | (Par)Off_distant |   |   | (Par)Off_complicated |   |   |
 |:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
@@ -290,7 +290,7 @@ X : Absence of tensorboard logs and checkpoints
 
 </br>
 
-### Challenging scenarios
+#### Challenging scenarios
 
 |        | (Par)Off_hard |   |   | (Par)Off_superhard |   |   |
 |:------:|:-------------:|:-:|:-:|:------------------:|:-:|:-:|
@@ -321,7 +321,6 @@ X : Absence of tensorboard logs and checkpoints
 |   DDN  |       -       | - | - |         O          | O | O |           
 |  DMIX  |       -       | - | - |         O          | O | O |           
 |  DRIMA |       ▵(Model)       | ▵(Model) | ▵(Model) |          O         | O | O |
-
 
 </br>
 
