@@ -208,6 +208,123 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 
 </br>
 
+## Logs and Checkpoints
+
+* While we are developing a benchmark from Feb., 2022, we encountered an unexpectable difficulty like deleting stored result files owing to malfunction of computation resources. 
+* Therefore, despite of restroing these files, we provides partial information of pretrained checkpoints and tensorboard logs. 
+* Instead, we completely provide training curves of all algorithms and its test scores in terms of training horizon. Please see the provided csv files. 
+
+```
+Par : Parallel experience buffer
+Seq : Sequential experience buffer
+```
+
+O : Exsistence of tensorboard logs and checkpoints
+▵ : Exsitence of either tensorboard logs and checkpoints
+X : Absence of tensorboard logs and checkpoints
+
+
+### Defense scenarios
+
+|        | (Par)Def_infantry |   |   | (Par)Def_armored |   |   | (Par)Def_outnumbered |   |   |
+|:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
+|        |         1         | 2 | 3 |         1        | 2 | 3 |           1          | 2 | 3 |
+|   IQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   VDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  QMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  QTRAN |         -         | - | - |         -        | - | - |           -          | - | - |
+|  COMA  |         O         | O | O |         O        | O | O |           O          | O | O |
+|  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DRIMA |         -         | - | - |         -        | - | - |           -          | - | - |
+
+|        | (Seq)Def_infantry |   |   | (Seq)Def_armored |   |   | (Seq)Def_outnumbered |   |   |
+|:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
+|        |         1         | 2 | 3 |         1        | 2 | 3 |           1          | 2 | 3 |
+|   IQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   VDN  |         O         | O | O |         O        | O | O |           -          | - | - |
+|  QMIX  |         O         | O | O |         O        | O | - |           O          | O | - |
+|  QTRAN |         O         | O | O |         O        | O | O |           -          | - | - |
+|  COMA  |         O         | O | - |         O        | O | O |           O          | O | O |
+| MADDPG |         O         | O | - |         O        | O | - |           O          | O | O |
+|  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   DDN  |         O         | O | O |         O        | O | O |           O          | O | O |
+|  DMIX  |         O         | O | O |         O        | O | O |           O          | O | O |
+|  DRIMA |         O         | O | - |         O        | ▵(Model) | - |           O          | ▵(Model) | - |
+
+</br>
+
+### Offensive scenarios
+
+|        | (Par)Off_near |   |   | (Par)Off_distant |   |   | (Par)Off_complicated |   |   |
+|:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
+|        |         1         | 2 | 3 |         1        | 2 | 3 |           1          | 2 | 3 |
+|   IQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   VDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  QMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  QTRAN |         -         | - | - |         -        | - | - |           -          | - | - |
+|  COMA  |         O         | O | O |         O        | O | O |           O          | O | O |
+|  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
+|   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DRIMA |         -         | - | - |         -        | - | - |           -          | - | - |
+
+|        | (Seq)Off_near |   |   | (Seq)Off_distant |   |   | (Seq)Off_complicated |   |   |
+|:------:|:-----------------:|:-:|:-:|:----------------:|:-:|:-:|:--------------------:|:-:|:-:|
+|        |         1         | 2 | 3 |         1        | 2 | 3 |           1          | 2 | 3 |
+|   IQL  |         -         | - | - |         -        | - | - |           -          | - | - |
+|   VDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  QMIX  |         ▵(Model)         | ▵(Model) | - |         O        | - | O |           O          | O | - |
+|  QTRAN |         -         | - | - |         -        | - | - |           -          | - | - |
+|  COMA  |         O         | O | O |         O        | O | O |           -          | - | - |
+| MADDPG |         O         | O | O |         -        | - | - |           O          | O | - |
+|  MASAC |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DIQL  |         -         | - | - |         -        | - | - |           -          | - | - |
+|   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
+|  DRIMA |         -         | ▵(Model) | O |         O        | O | - |           O          | O | O |
+
+</br>
+
+### Challenging scenarios
+
+|        | (Par)Off_hard |   |   | (Par)Off_superhard |   |   |
+|:------:|:-------------:|:-:|:-:|:------------------:|:-:|:-:|
+|        |       1       | 2 | 3 |          1         | 2 | 3 |
+|   IQL  |       O       | O | O |          O         | O | O |
+|   VDN  |       O       | O | O |          ▵(Model)         | O | O |
+|  QMIX  |       O       | O | O |          O         | O | O |
+|  QTRAN |       O       | O | O |          -         | - | - |
+|  COMA  |       O       | O | O |          O         | O | O |
+|  MASAC |       O       | O | O |          O         | O | O |
+|  DIQL  |       O       | O | O |          O         | O | O |
+|   DDN  |       O       | O | O |          -         | - | - |
+|  DMIX  |       O       | O | O |          O         | O | O |
+|  DRIMA |       -       | - | - |          -         | - | - |
+
+
+|        | (Par)Off_hard |   |   | (Par)Off_superhard |   |   |
+|:------:|:-------------:|:-:|:-:|:------------------:|:-:|:-:|
+|        |       1       | 2 | 3 |          1         | 2 | 3 |
+|   IQL  |       -       | - | - |          -         | - | - |
+|   VDN  |       -       | - | - |          -         | - | - |
+|  QMIX  |       O       | O | O |          O         | O | O |
+|  QTRAN |       -       | - | - |          -         | - | - |
+|  COMA  |       O       | O | O |          O         | O | O |
+| MADDPG |       -       | - | - |         O          | O | O |           
+|  MASAC |       -       | - | - |          -         | - | - |
+|  DIQL  |       -       | - | - |         O          | O | O |           
+|   DDN  |       -       | - | - |         O          | O | O |           
+|  DMIX  |       -       | - | - |         O          | O | O |           
+|  DRIMA |       ▵(Model)       | ▵(Model) | ▵(Model) |          O         | O | O |
+
+
+</br>
+
 ## 🤝 License
 
 * The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC+ environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
