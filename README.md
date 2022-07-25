@@ -219,9 +219,9 @@ Par : Parallel experience buffer
 Seq : Sequential experience buffer
 ```
 
-O : Exsistence of tensorboard logs and checkpoints. 
-▵ : Exsitence of either tensorboard logs and checkpoints. 
-X : Absence of tensorboard logs and checkpoints. 
+O : Exsistence of tensorboard logs and checkpoints.   
+▵ : Exsitence of either tensorboard logs and checkpoints.   
+X : Absence of tensorboard logs and checkpoints.   
 
 
 #### Defense scenarios
@@ -323,7 +323,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  DRIMA |       ▵(Model)       | ▵(Model) | ▵(Model) |          O         | O | O |
 
 </br>
-
+  
 ## 🤝 License
 
 * The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC+ environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
