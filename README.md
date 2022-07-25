@@ -222,7 +222,7 @@ Seq : Sequential experience buffer
 
 ```
 O : Exsistence of tensorboard logs and checkpoints.   
-▵ : Exsitence of either tensorboard logs and checkpoints.   
+▵ : Exsitence of either tensorboard logs or checkpoints.   
 X : Absence of tensorboard logs and checkpoints.   
 ```
 
