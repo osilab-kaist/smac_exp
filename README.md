@@ -220,10 +220,11 @@ Par : Parallel experience buffer
 Seq : Sequential experience buffer
 ```
 
+```
 O : Exsistence of tensorboard logs and checkpoints.   
 ▵ : Exsitence of either tensorboard logs and checkpoints.   
 X : Absence of tensorboard logs and checkpoints.   
-
+```
 
 #### Defense scenarios
 
