@@ -212,9 +212,8 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 ## Logs and Checkpoints
 
 * While we are developing a benchmark from Feb., 2022, we encountered an unexpectable difficulty like deleting stored result files owing to malfunction of computation resources. 
-* Therefore, despite of restroing these files, we provides partial information of pretrained checkpoints and tensorboard logs. 
-* Instead, we completely provide training curves of all algorithms and its test scores in terms of training horizon.   
-* Please see the provided csv files[https://url.kr/mak6gq](https://url.kr/mak6gq). 
+* Therefore, despite of restroing these files, we provides partial information of pretrained checkpoints and tensorboard logs. Please refer to this URL([https://url.kr/92bp83](https://url.kr/92bp83))
+* Instead, we completely provide training curves of all algorithms and its test scores in terms of training horizon. Please see the provided csv files ([https://url.kr/mak6gq](https://url.kr/mak6gq)).
 
 ```
 Par : Parallel experience buffer
