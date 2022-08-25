@@ -42,12 +42,14 @@ recurrent_critic: False
 optim_alpha: 0.99 # RMSProp alpha
 optim_eps: 0.00001 # RMSProp epsilon
 grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+add_value_last_step: True
 
 # --- Agent parameters ---
 agent: "rnn" # Default rnn agent
 rnn_hidden_dim: 64 # Size of hidden state for default rnn agent
 obs_agent_id: True # Include the agent's one_hot id in the observation
 obs_last_action: True # Include the agent's last action (one_hot) in the observation
+hidden_dim: 64 # This is for ppo mixer
 
 # --- Experiment running params ---
 repeat_id: 1

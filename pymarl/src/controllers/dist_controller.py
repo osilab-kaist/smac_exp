@@ -16,15 +16,16 @@ class DistMAC:
 
         self.hidden_states = None
 
-    def select_actions(self, ep_batch, t_ep, t_env, bs=slice(None), test_mode=False):
+    def select_actions(self, ep_batch, t_ep, t_env, bs=slice(None), test_mode=False): #bs = parallel number
         # Only select actions for the selected batch elements in bs
         avail_actions = ep_batch["avail_actions"][:, t_ep]
-        agent_outputs = self.forward(ep_batch, t_ep, test_mode=test_mode) 
+        agent_outputs = self.forward(ep_batch, t_ep, test_mode=test_mode) #여기 나오는 아웃풋은 agent utility function에서 나오는 그 형태랑 같음
+        #[parallel, N_dist, N_agent, N_action]
         
         if self.args.risk_agent == 'seek':
-            agent_outputs = agent_outputs[:, -1] 
+            agent_outputs = agent_outputs[:, -1] #맨뒤에 값 1개만 뽑네.....
         elif self.args.risk_agent == 'neutral':
-            agent_outputs = agent_outputs[:, self.args.dist_N//2] 
+            agent_outputs = agent_outputs[:, self.args.dist_N//2] #이건 가운데값 1개만 뽑는거고....
         else:
             assert 0
 
@@ -32,9 +33,9 @@ class DistMAC:
         return chosen_actions
 
     def forward(self, ep_batch, t, test_mode=False):
-        agent_inputs = self._build_inputs(ep_batch, t)
+        agent_inputs = self._build_inputs(ep_batch, t) #observation dimension 크기 뱉어내 
         avail_actions = ep_batch["avail_actions"][:, t]
-        agent_outs, self.hidden_states = self.agent(agent_inputs, self.hidden_states)
+        agent_outs, self.hidden_states = self.agent(agent_inputs, self.hidden_states) #agent utility
 
         # Softmax the agent outputs if they're policy logits
         if self.agent_output_type == "pi_logits":

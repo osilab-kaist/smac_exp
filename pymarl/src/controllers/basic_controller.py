@@ -45,6 +45,10 @@ class BasicMAC:
                 agent_outs[reshaped_avail_actions == 0] = -1e10
 
             agent_outs = th.nn.functional.softmax(agent_outs, dim=-1)
+
+            if self.args.name == 'mappo':
+                return agent_outs.view(ep_batch.batch_size, self.n_agents, -1)
+
             if not forward_type:
                 # Epsilon floor
                 epsilon_action_num = agent_outs.size(-1)

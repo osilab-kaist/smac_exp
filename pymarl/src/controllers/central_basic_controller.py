@@ -48,7 +48,8 @@ class CentralBasicMAC:
         inputs = []
         inputs.append(batch["obs"][:, t])  # b1av
         if self.args.central_agent == "central_rnn_big":
-            inputs[0] = (batch["state"][:,t].unsqueeze(1).repeat(1,self.args.n_agents,1))
+            inputs[0] = (batch["state"][:,t].unsqueeze(1).repeat(1,self.args.n_agents,1))  # b1av
+            # inputs.append(batch["state"][:,t].unsqueeze(1).repeat(1,self.args.n_agents,1))  # b1av
         if self.args.obs_last_action:
             if t == 0:
                 inputs.append(th.zeros_like(batch["actions_onehot"][:, t]))

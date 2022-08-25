@@ -16,7 +16,7 @@ target_update_interval: 200
 
 # use the Q_Learner to train
 agent_output_type: "q"
-learner: "drima_learner"
+learner: "q_dist_learner"
 double_q: True
 mixer: "qmix"
 mixing_embed_dim: 32

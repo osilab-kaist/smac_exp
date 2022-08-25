@@ -4,9 +4,9 @@ import torch.nn.functional as F
 import numpy as np
 
 
-class DrimaMixer(nn.Module):
+class QDistMixer(nn.Module):
     def __init__(self, args):
-        super(DrimaMixer, self).__init__()
+        super(QDistMixer, self).__init__()
 
         self.args = args
         self.n_agents = args.n_agents
@@ -51,6 +51,7 @@ class DrimaMixer(nn.Module):
 
 
     def forward(self, agent_qs, states, hidden_states, mode = None):
+        # print('agent qs shape:', agent_qs.shape)
         bs = agent_qs.shape[0]
         ts = agent_qs.shape[1]
         N = agent_qs.shape[2]
@@ -69,6 +70,7 @@ class DrimaMixer(nn.Module):
             assert 0
 
         taus_env = th.rand(bs, ts, N_env, 1).to(self.args.device)
+        # print('taus_env shape:', taus_env.shape)
 
         if mode == 'approx':
             if self.args.risk_env == 'neutral':
@@ -79,8 +81,11 @@ class DrimaMixer(nn.Module):
                 taus_env = taus_env * 0.25 + 0.75
             else:
                 assert 0
-                
+        # print('pis shape:', self.pis.shape)
+        # print('!!!!', (taus_env * self.pis).shape)
         cos_embed_env = F.relu(self.fc_cos(th.cos(taus_env * self.pis)))
+        # print('cos epmbed:', cos_embed_env.shape)
+        # print('state:', states.shape)
         agent_qs_e = agent_qs.view(bs, ts, 1, -1) #[32, 120, 1, 10 x 5]
         cat_state_qs = th.cat([agent_qs_e, states.unsqueeze(2)], dim = -1)
 
@@ -94,7 +99,9 @@ class DrimaMixer(nn.Module):
         w2 = th.abs(self.weight2(states)).reshape((bs, ts, N, self.n_agents))
 
         q_tot = Qjt.reshape(bs, ts, 1, N_env, 1) + (w1 * agent_qs).sum(dim = -1).reshape(bs, ts, N, 1, 1) + v.reshape(bs, ts, N, 1, 1)
+        # print('q tot shape:', q_tot.shape)
         q_tot2 = (w2 * agent_qs).sum(dim = -1).reshape(bs, ts, N, 1, 1) + v.reshape(bs, ts, N, 1, 1)
+        # print('q tot2 shape:', q_tot2.shape)
 
         return q_tot, q_tot2, taus_env.reshape(bs, ts, 1, N_env, 1)
 

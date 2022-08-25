@@ -1,6 +1,6 @@
 import copy
 from components.episode_buffer import EpisodeBatch
-from modules.mixers.drima import DrimaMixer
+from modules.mixers.qdist import QDistMixer
 import torch as th
 import numpy as np
 from torch.optim import RMSprop
@@ -21,7 +21,7 @@ class QLearner:
         self.last_target_update_episode = 0
 
 
-        self.mixer = DrimaMixer(args)
+        self.mixer = QDistMixer(args)
         self.params += list(self.mixer.parameters())
         self.target_mixer = copy.deepcopy(self.mixer)
 
@@ -116,6 +116,8 @@ class QLearner:
             max_action_qvals_r, max_action_qvals2, _ = self.mixer(max_action_qvals, batch["state"][:, :-1], mac_hidden_states[:, :-1], mode = 'approx')
             target_max_qvals, _, _ = self.target_mixer(target_max_qvals, batch["state"][:, 1:], target_mac_hidden_states[:, 1:], mode = 'target')
 
+
+        # exit()
         
         bs = chosen_action_qvals.size(0)
         ts = chosen_action_qvals.size(1)
@@ -125,8 +127,12 @@ class QLearner:
         assert chosen_action_qvals_r.shape == (bs, ts, self.N, self.N_env, 1)
         assert chosen_action_qvals2_r.shape == (bs, ts, self.N, 1, 1)
 
+        # v17
+        # targets = (rewards + self.args.gamma * (1 - terminated) * target_max_qvals.min(dim = 2, keepdim = True)[0]).detach()
         targets = (rewards + self.args.gamma * (1 - terminated) * target_max_qvals.mean(dim = 2, keepdim = True)).detach()
+        # targets = (rewards + self.args.gamma * (1 - terminated) * target_max_qvals).detach()
 
+        #dim = 3은 환경의 fraction에 대한 평균
         targets2 = chosen_action_qvals_r.mean(dim = 3, keepdim = True)
         targets3 = max_action_qvals_r.mean(dim = 3, keepdim = True).detach()
         targets4 = max_action_qvals_r.mean(dim = 3, keepdim = True)
