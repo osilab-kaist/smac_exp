@@ -180,16 +180,16 @@ Regarding to offensive scenarios, we notice considerable performance differences
 To provide open-ended problems for the MARL domain, we suggest more challenging scenarios. In these scenarios, the agents are required to simultaneously learn completion of multi-stage tasks and micro-control during training. We argue that this scenario requires more sophisticated fine manipulation compared to other offensive scenarios. This is due to the fact that not only the strength of allies is identical to that of opponents, but also *Gathered* enables opponents to intensively strike allies at once. This indicates the necessity of more efficient exploration strategies for the completion of multi-stage tasks and micro-control. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •**<span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span>**  
-![Off_hard](/assets/results/off_hard_sequential.png){: width="40%" }
+<!-- ![Off_hard](/assets/results/off_hard_sequential.png){: width="40%" } -->
 ![Off_superhard](/assets/results/off_hard_parallel.png){: width="40%" }
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; •**<span style="font-family:Raleway; font-size:1.0em;"> Parallel Episodic Buffer </span>**  
-![Off_hard](/assets/results/off_superhard_sequential.png){: width="40%" }
+<!-- ![Off_hard](/assets/results/off_superhard_sequential.png){: width="40%" } -->
 ![Off_superhard](/assets/results/off_superhard_parallel.png){: width="40%" }
 
 <br/>
 
-<iframe width="370" height="205" src="https://www.youtube.com/embed/IhMnoA7-FYo" title="SMAC+: Off hard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="370" height="205" src="https://www.youtube.com/embed/o4__OnkYukM" title="SMAC+: Def Superhard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="370" height="205" src="https://www.youtube.com/embed/yNsphTrXwY4" title="SMAC+: Off Superhard" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/>
