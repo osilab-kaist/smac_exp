@@ -1,0 +1,43 @@
+# --- QMIX specific parameters ---
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_mid: None
+epsilon_finish: 0.05
+epsilon_mid_time: None
+epsilon_anneal_time: 50000
+decay: "linear"
+
+risk_start: 1.0
+risk_finish: -1.0
+risk_anneal_time: 50000
+test_lower_risk: 0.0
+test_upper_risk: 0.5
+risk_level: None
+
+runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "iqn_learner"
+double_q: False
+mixer: "dmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+name: "dmix"
+
+# IQN specific parameters
+agent: "iqn_rnn"
+optimizer: "Adam" # follow the optimizer used in the IQN paper
+quantile_embed_dim: 64 # n in paper
+n_quantiles: 8 # N in paper
+n_target_quantiles: 8 # N' in paper
+n_approx_quantiles: 32 # \hat{N} in paper, for approximating Q
