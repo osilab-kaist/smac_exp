@@ -97,7 +97,7 @@ map_param_registry = {
         "unit_type_bits": 8,
         "map_type": "plain_neut_tank",
     },
-     "defense_superhard": {
+    "defense_superhard": {
         "n_agents": 8,
         "n_enemies": 16,
         "n_neutrals": 6,
@@ -107,7 +107,6 @@ map_param_registry = {
         "unit_type_bits": 8,
         "map_type": "plain_neut_tank",
     },
-
 }
 
 
