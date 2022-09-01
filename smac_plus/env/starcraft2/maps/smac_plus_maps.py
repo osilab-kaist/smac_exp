@@ -96,7 +96,18 @@ map_param_registry = {
         "b_race": "T",
         "unit_type_bits": 8,
         "map_type": "plain_neut_tank",
-    }
+    },
+     "defense_superhard": {
+        "n_agents": 8,
+        "n_enemies": 16,
+        "n_neutrals": 6,
+        "limit": 120,
+        "a_race": "T",
+        "b_race": "T",
+        "unit_type_bits": 8,
+        "map_type": "plain_neut_tank",
+    },
+
 }
 
 
