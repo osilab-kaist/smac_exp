@@ -70,6 +70,7 @@
 | `defense_armored` | 1 SG Tank, 1 Tank, 1 Mar & 5 M | 2 Tank, 2 Mar & 9 M | Two-sided |
 | `defense_outnumbered` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
 
+
 </br>
 
 ### **Offense**
@@ -97,9 +98,13 @@
 
 </div>
 
+| Name | Ally Units | Enemy Units | Opponents approach |
+|:---:|:---:|:---:|:---:|
+| `defense_superhard` | 1 SG Tank, 1 Tank, 1 Mar & 5 M  | 2 Tank, 3 Mar & 10 M | Two-sided |
+
+
 | Name | Ally Units | Enemy Units | Distance & formation |
 |:---:|:---:|:---:|:---:|
-| `offense_hard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Spread |
 | `offense_superhard` |  1 SG Tank, 2 Tank, 2 Mar & 4 M| 1 SG Tank, 2 Tank, 2 Mar & 4 M | Complicated & Gathered |
 
 </br>
@@ -118,6 +123,7 @@
 | `COMA` | Policy Gradient based | [paper](https://arxiv.org/abs/1705.08926) |
 | `MASAC` | Policy Gradient based | [paper](https://arxiv.org/abs/2104.06655) |
 | `MADDPG` | Policy Gradient based | [paper](https://arxiv.org/abs/1706.02275) |
+| `MAPPO` | Policy Gradient based | [paper](https://arxiv.org/abs/2103.01955) |
 
 </br>
 
@@ -209,6 +215,15 @@ python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z runn
 
 </br>
 
+## 🏃Run an test 
+```shell
+cd ./pymarl
+python src/main.py --alg=qmix --env-config=smac_plus with env_args.map_name=offense_hard save_replay=True checkpoint_path={checkpoint_dir_path} load_step={n_steps} test_nepisode={n_test}
+python src/main.py --alg=qmix --env-config=smac with env_args.map_name=2s3z save_replay=True checkpoint_path={checkpoint_dir_path} load_step={n_steps} test_nepisode={n_test}
+```
+
+</br>
+
 ## Logs and Checkpoints
 
 * While we are developing a benchmark from Feb., 2022, we encountered an unexpectable difficulty like deleting stored result files owing to malfunction of computation resources. 
@@ -237,6 +252,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  QTRAN |         -         | - | - |         -        | - | - |           -          | - | - |
 |  COMA  |         O         | O | O |         O        | O | O |           O          | O | O |
 |  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  MAPPO |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
 |   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
@@ -252,6 +268,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  COMA  |         O         | O | - |         O        | O | O |           O          | O | O |
 | MADDPG |         O         | O | - |         O        | O | - |           O          | O | O |
 |  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  MAPPO |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
 |   DDN  |         O         | O | O |         O        | O | O |           O          | O | O |
 |  DMIX  |         O         | O | O |         O        | O | O |           O          | O | O |
@@ -270,6 +287,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  QTRAN |         -         | - | - |         -        | - | - |           -          | - | - |
 |  COMA  |         O         | O | O |         O        | O | O |           O          | O | O |
 |  MASAC |         O         | O | O |         O        | O | O |           O          | O | O |
+|  MAPPO |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DIQL  |         O         | O | O |         O        | O | O |           O          | O | O |
 |   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
@@ -285,6 +303,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  COMA  |         O         | O | O |         O        | O | O |           -          | - | - |
 | MADDPG |         O         | O | O |         -        | - | - |           O          | O | - |
 |  MASAC |         -         | - | - |         -        | - | - |           -          | - | - |
+|  MAPPO |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DIQL  |         -         | - | - |         -        | - | - |           -          | - | - |
 |   DDN  |         -         | - | - |         -        | - | - |           -          | - | - |
 |  DMIX  |         -         | - | - |         -        | - | - |           -          | - | - |
@@ -303,13 +322,14 @@ X : Absence of tensorboard logs and checkpoints.
 |  QTRAN |       O       | O | O |          -         | - | - |
 |  COMA  |       O       | O | O |          O         | O | O |
 |  MASAC |       O       | O | O |          O         | O | O |
+|  MAPPO |       -       | - | - |          -         | - | - |
 |  DIQL  |       O       | O | O |          O         | O | O |
 |   DDN  |       O       | O | O |          -         | - | - |
 |  DMIX  |       O       | O | O |          O         | O | O |
 |  DRIMA |       -       | - | - |          -         | - | - |
 
 
-|        | (Par)Off_hard |   |   | (Par)Off_superhard |   |   |
+|        | (Seq)Off_hard |   |   | (Seq)Off_superhard |   |   |
 |:------:|:-------------:|:-:|:-:|:------------------:|:-:|:-:|
 |        |       1       | 2 | 3 |          1         | 2 | 3 |
 |   IQL  |       -       | - | - |          -         | - | - |
@@ -319,6 +339,7 @@ X : Absence of tensorboard logs and checkpoints.
 |  COMA  |       O       | O | O |          O         | O | O |
 | MADDPG |       -       | - | - |         O          | O | O |           
 |  MASAC |       -       | - | - |          -         | - | - |
+|  MAPPO |       -       | - | - |          -         | - | - |
 |  DIQL  |       -       | - | - |         O          | O | O |           
 |   DDN  |       -       | - | - |         O          | O | O |           
 |  DMIX  |       -       | - | - |         O          | O | O |           
