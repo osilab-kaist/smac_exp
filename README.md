@@ -1,12 +1,12 @@
 <div align="center">
     
-# The StarCraft Multi-Agent Challenges+
+# The StarCraft Multi-Agent Exploration Challenges
     
 **Bechmarks for Efficient Exploration of Multi-stage Tasks Completion and Utilization of Environmental Factors**
 
 |<img src="/images/SMAC_plus_off.GIF" width="100%"> | <img src="/images/SMAC_plus_def.GIF" width="100%"> |
 |:--------:|:-------:|
-|*SMAC+ Offense*|*SMAC+ Defense*|
+|*SMAC-Exp Offense*|*SMAC-Exp Defense*|
 
     
     
@@ -19,12 +19,12 @@
 
 ## 🧚 Preview
 
-**[The StarCraft Multi-Agent Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
+**[The StarCraft Multi-Agent Exploration Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
 [Mingyu Kim\*](https://mingyukim87.github.io), Jihwan Oh\*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 (\*:equal contribution)
 
 * Paper : [https://arxiv.org/abs/2207.02007](https://arxiv.org/abs/2207.02007)
-* Project page : [https://osilab-kaist.github.io/smac_plus/](https://osilab-kaist.github.io/smac_plus/)
+* Project page : [https://osilab-kaist.github.io/smac_exp/](https://osilab-kaist.github.io/smac_exp/)
 * Paperwithcodes : [https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning](https://paperswithcode.com/paper/the-starcraft-multi-agent-challenges-learning)
 * Learning curves : [https://url.kr/mak6gq](https://url.kr/mak6gq)
 * Tensorboard logs and checkpoints : [https://url.kr/92bp83](https://url.kr/92bp83)
@@ -34,16 +34,16 @@
 ## ✍️ Notice
 * [PyMARL](https://github.com/oxwhirl/pymarl) : The framework for deep multi-agent reinforcement learning with PyTorch.  
 * [SMAC](https://github.com/oxwhirl/smac) : The environments for research in the field of collaborative multi-agent reinforcement learning (MARL) based on Blizzard's StarCraft II RTS game. We work on based on these.  
-* [SMAC+](https://github.com/osilab-kaist/smac_plus) : It provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC+.  
+* [SMAC_Exp](https://github.com/osilab-kaist/smac_exp) : It provides its environment and exceutes training and testing RL algorithms based on PyMARL with both SMAC and SMAC_Exp.  
 
 </br>
 
-## 🆚 SMAC vs SMAC+ 
+## 🆚 SMAC vs SMAC_Exp 
 * [SMAC](https://github.com/oxwhirl/smac) is the standard benchmark of Multi-Agent Reinforcement Learning. It is mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions.  
 
-* [SMAC+](https://github.com/osilab-kaist/smac_plus) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicitly multi-stage tasks and environmental factors as well as micro-control.  
+* [SMAC_Exp](https://github.com/osilab-kaist/smac_exp) contains total 8 maps and categorizes into three types like `defense`, `offense`, `challenging`. It is interested in the exploration capability of MARL algorithms to efficiently learn implicitly multi-stage tasks and environmental factors as well as micro-control.  
 
-| Main Issues           | SMAC   | SMAC+ |
+| Main Issues           | SMAC   | SMAC_Exp |
 |:-----------------------:|:--------:|:-------:|
 | Agents micro-control | O     |  O     |
 | Multi-stage tasks     | ▵ |  O     |
@@ -137,7 +137,7 @@
 
 </br>
 
-1️⃣ **Cloning SMAC_PLUS**
+1️⃣ **Cloning SMAC_Exp**
 ```shell
 git clone https://github.com/osilab-kaist/smac_plus.git
 ```
@@ -173,7 +173,7 @@ mv SMAC_Maps ./pymarl/3rdparty/StarCraftII/Maps/
 
 
 ```
-smac_plus
+smac_exp
 ├── pymarl
 │   ├── docker
 │   ├── 3rdparty
