@@ -2,13 +2,13 @@
 layout: page
 ---
 
-# The StarCraft Multi-Agent Challenges+
+# The StarCraft Multi-Agent Exploration Challenges
 
 The StarCraft Multi-Agent Challenges requires agents to learn completion of multi-stage tasks and use of environmental factors without precise reward functions. The previous challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. This challenge, on the other hand, is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control. This study covers both offensive and defensive scenarios. In the offensive scenarios, agents must learn to first find opponents and then eliminate them. The defensive scenarios require agents to use topographic features. For example, agents need to position themselves behind protective structures to make it harder for enemies to attack. We investigate MARL algorithms under SMAC+ and observe that recent approaches work well in similar settings to the previous challenges, but misbehave in offensive scenarios. Additionally, we observe that an enhanced exploration approach has a positive effect on performance but is not able to completely solve all scenarios. This study proposes a new axis of future research. 
 
 | ![gif_off](/assets/gif/SMAC_plus_off.GIF){: width="550" } | ![gif_def](/assets/gif/SMAC_plus_def.GIF){: width="550"} |  
 |:--:| |:--:| 
-| *<span style="font-family:Raleway; font-size:0.9em;"> SMAC+_Offense </span>*  | *<span style="font-family:Raleway; font-size:0.9em;"> SMAC+_Defense </span>* |
+| *<span style="font-family:Raleway; font-size:0.9em;"> SMAC-Exp_Offense </span>*  | *<span style="font-family:Raleway; font-size:0.9em;"> SMAC-Exp_Defense </span>* |
 
 <br/>
 
@@ -17,14 +17,14 @@ Here is the [Paper] and [Code] for the benchmarks and implemented baselines.
 
 <br/>  
 
-## General Description of SMAC+
+## General Description of SMAC-Exp
 <hr>
 
 This challenge offers advanced environmental factors such as destructible structures that can be used to conceal enemies and terrain features, such as a hill, that may be used to mitigate damages. Also, we newly introduce offensive scenarios that demand sequential completion of multi-stage tasks requiring finding adversaries initially and then eliminating them. Like in SMAC, both defensive and offensive scenarios in SMAC+ employ the reward function proportional to the number of enemies removed. 
 
 ### Comparison between [SMAC] and [SMAC+]
 
-| Main Issues           | SMAC   | SMAC+ |
+| Main Issues           | SMAC   | SMAC-Exp |
 |:-----------------------:|:--------:|:-------:|
 | Agents micro-control | O     |  O     |
 | Multi-stage tasks     | ▵ |  O     |
@@ -32,7 +32,7 @@ This challenge offers advanced environmental factors such as destructible struct
 
 <br/>  
 
-### List of environmental factors and multi-stage tasks for both [SMAC] and [SMAC+]
+### List of environmental factors and multi-stage tasks for both [SMAC] and [SMAC-Exp]
 
 In SMAC, some difficult scenarios, such as *2c\_vs\_64zg* and *corridor*, require agents to indirectly learn environmental factors, such as exploiting different levels of terrains or discover multi-stage tasks like avoiding rushing enemies first and then eliminating individuals without a specific reward for them. However, those scenarios do not allow quantitative assessment of the algorithm's exploration capabilities, as they do not accurately reflect the difficulty of the task, which depends on the complexity of multi-stage tasks and the significance of environmental factors.  
 
@@ -48,7 +48,7 @@ To address this issue, we propose a new class of the StarCraft Multi-Agent Chall
 
 <br/>  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **[SMAC+]**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **[SMAC-Exp]**
 
 |                       |                  Defense         |                                 Offese                                |
 |:-----------------------:|:-------------------------------:|:-------------------------------------------:|
@@ -58,7 +58,7 @@ To address this issue, we propose a new class of the StarCraft Multi-Agent Chall
 <br/>  
 <br/>  
 
-## Defensive Scenarios in SMAC+
+## Defensive Scenarios in SMAC-Exp
 <hr>
 - Graphical explanation of defensive scenarios
 
@@ -68,7 +68,7 @@ To address this issue, we propose a new class of the StarCraft Multi-Agent Chall
 
 <br/>  
 
-In defensive scenarios, we place allies on the hill and adversaries on the plain. We emphasize the importance of agents defeating adversaries utilizing topographical factors. The defensive scenarios in SMAC$^{+}$ are almost identical to those in SMAC. However, our environment expands the exploration range of allies to scout for the direction of offense by allowing enemies to attack in several directions and adding topographical changes. We control the difficulties of the defensive settings as follows.
+In defensive scenarios, we place allies on the hill and adversaries on the plain. We emphasize the importance of agents defeating adversaries utilizing topographical factors. The defensive scenarios in SMAC-Exp are almost identical to those in SMAC. However, our environment expands the exploration range of allies to scout for the direction of offense by allowing enemies to attack in several directions and adding topographical changes. We control the difficulties of the defensive settings as follows.
 
 |     Scenario    | Supply difference  | Opponents approach |
 |:---------------:|:------------------:|:------------------:|
@@ -78,7 +78,7 @@ In defensive scenarios, we place allies on the hill and adversaries on the plain
 
 <br/>  
 
-## Offensive Scenarios in SMAC+
+## Offensive Scenarios in SMAC-Exp
 <hr>
 
 - Graphical explanation of offensive scenarios
@@ -99,7 +99,7 @@ Offensive scenarios provide learning of multi-stage tasks without direct incenti
 
 <br/>  
 
-## Challenging Scenarios in SMAC+
+## Challenging Scenarios in SMAC-Exp
 <hr>
 
 - Graphical explanation of challenging scenarios
@@ -226,5 +226,5 @@ This work was conducted by Center for Applied Research in Artificial Intelligenc
 
 [Code]: https://github.com/osilab-kaist/smac_plus
 [SMAC]: https://arxiv.org/abs/1902.04043
-[SMAC+]: https://arxiv.org/abs/2207.02007
+[SMAC-Exp]: https://arxiv.org/abs/2207.02007
 [Paper]: https://arxiv.org/abs/2207.02007
