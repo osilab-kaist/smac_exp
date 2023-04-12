@@ -19,7 +19,7 @@
 
 ## 🧚 Preview
 
-**[The StarCraft Multi-Agent Exploration Challenges+ : Learning  of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
+**[The StarCraft Multi-Agent Exploration Challenges : Learning Multi-Stage Tasks and Environmental Factors without Precise Reward Functions](https://arxiv.org/abs/2207.02007)**.   
 [Mingyu Kim\*](https://mingyukim87.github.io), Jihwan Oh\*, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun.  
 (\*:equal contribution)
 
@@ -349,14 +349,14 @@ X : Absence of tensorboard logs and checkpoints.
   
 ## 🤝 License
 
-* The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC+ environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
+* The original SMAC environment and PyMARL code follow the MIT license and Apache 2.0 license respectively. The proposed SMAC-Exp environment and the modified PyMARL code are also released under the MIT license and Apache 2.0 license each.
 
 </br>
 
 ## 📌 Citation
 ```bibtext
 @article{kim2022smacplus,
-  title={The StarCraft Multi-Agent Challenges+ : Learning of Multi-Stage Tasks and Environmental Factors without Precise Reward Functions},
+  title={The StarCraft Multi-Agent Exploration Challenges : Learning Multi-Stage Tasks and Environmental Factors without Precise Reward Functions},
   author={Mingyu Kim, Jihwan Oh, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun},
   journal={arXiv preprint arXiv:2207.02007},
   year={2022}
