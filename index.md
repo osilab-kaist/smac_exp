@@ -4,7 +4,7 @@ layout: page
 
 # The StarCraft Multi-Agent Exploration Challenges
 
-The StarCraft Multi-Agent Challenges requires agents to learn completion of multi-stage tasks and use of environmental factors without precise reward functions. The previous challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. This challenge, on the other hand, is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control. This study covers both offensive and defensive scenarios. In the offensive scenarios, agents must learn to first find opponents and then eliminate them. The defensive scenarios require agents to use topographic features. For example, agents need to position themselves behind protective structures to make it harder for enemies to attack. We investigate MARL algorithms under SMAC+ and observe that recent approaches work well in similar settings to the previous challenges, but misbehave in offensive scenarios. Additionally, we observe that an enhanced exploration approach has a positive effect on performance but is not able to completely solve all scenarios. This study proposes a new axis of future research. 
+The StarCraft Multi-Agent Challenges requires agents to learn completion of multi-stage tasks and use of environmental factors without precise reward functions. The previous challenges (SMAC) recognized as a standard benchmark of Multi-Agent Reinforcement Learning are mainly concerned with ensuring that all agents cooperatively eliminate approaching adversaries only through fine manipulation with obvious reward functions. This challenge, on the other hand, is interested in the exploration capability of MARL algorithms to efficiently learn implicit multi-stage tasks and environmental factors as well as micro-control. This study covers both offensive and defensive scenarios. In the offensive scenarios, agents must learn to first find opponents and then eliminate them. The defensive scenarios require agents to use topographic features. For example, agents need to position themselves behind protective structures to make it harder for enemies to attack. We investigate MARL algorithms under SMAC-Exp and observe that recent approaches work well in similar settings to the previous challenges, but misbehave in offensive scenarios. Additionally, we observe that an enhanced exploration approach has a positive effect on performance but is not able to completely solve all scenarios. This study proposes a new axis of future research. 
 
 | ![gif_off](/assets/gif/SMAC_plus_off.GIF){: width="550" } | ![gif_def](/assets/gif/SMAC_plus_def.GIF){: width="550"} |  
 |:--:| |:--:| 
@@ -20,9 +20,9 @@ Here is the [Paper] and [Code] for the benchmarks and implemented baselines.
 ## General Description of SMAC-Exp
 <hr>
 
-This challenge offers advanced environmental factors such as destructible structures that can be used to conceal enemies and terrain features, such as a hill, that may be used to mitigate damages. Also, we newly introduce offensive scenarios that demand sequential completion of multi-stage tasks requiring finding adversaries initially and then eliminating them. Like in SMAC, both defensive and offensive scenarios in SMAC+ employ the reward function proportional to the number of enemies removed. 
+This challenge offers advanced environmental factors such as destructible structures that can be used to conceal enemies and terrain features, such as a hill, that may be used to mitigate damages. Also, we newly introduce offensive scenarios that demand sequential completion of multi-stage tasks requiring finding adversaries initially and then eliminating them. Like in SMAC, both defensive and offensive scenarios in SMAC-Exp employ the reward function proportional to the number of enemies removed. 
 
-### Comparison between [SMAC] and [SMAC+]
+### Comparison between [SMAC] and [SMAC-Exp]
 
 | Main Issues           | SMAC   | SMAC-Exp |
 |:-----------------------:|:--------:|:-------:|
@@ -36,7 +36,7 @@ This challenge offers advanced environmental factors such as destructible struct
 
 In SMAC, some difficult scenarios, such as *2c\_vs\_64zg* and *corridor*, require agents to indirectly learn environmental factors, such as exploiting different levels of terrains or discover multi-stage tasks like avoiding rushing enemies first and then eliminating individuals without a specific reward for them. However, those scenarios do not allow quantitative assessment of the algorithm's exploration capabilities, as they do not accurately reflect the difficulty of the task, which depends on the complexity of multi-stage tasks and the significance of environmental factors.  
 
-To address this issue, we propose a new class of the StarCraft Multi-Agent Challenges+ that encompasses advanced and sophisticated multi-stage tasks, and involves environmental factors agents must learn to accomplish, as seen in the table as follows.
+To address this issue, we propose a new class of the StarCraft Multi-Agent Exploration Challenges that encompasses advanced and sophisticated multi-stage tasks, and involves environmental factors agents must learn to accomplish, as seen in the table as follows.
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **[SMAC]**
@@ -89,7 +89,7 @@ In defensive scenarios, we place allies on the hill and adversaries on the plain
 
 <br/>  
                          
-Offensive scenarios provide learning of multi-stage tasks without direct incentives in MARL challenges. We suggest that agents should accomplish goals incrementally, such as eliminating adversaries after locating them. To observe a clear multi-stage structure, we allocate thirteen supplies to the allies more than the enemies. Hence, as soon as enemies are located, the agents rapidly learn to destroy enemies. As detailed in the previous table, in SMAC+, agents will not have a chance to get a reward if they do not encounter adversaries. This is because there are only three circumstances in which agents can get rewards: when agents defeat an adversary, kill an adversary, or inflict harm on an adversary. As a result, the main challenges necessitate not only micro-management, but also exploration to locate enemies.
+Offensive scenarios provide learning of multi-stage tasks without direct incentives in MARL challenges. We suggest that agents should accomplish goals incrementally, such as eliminating adversaries after locating them. To observe a clear multi-stage structure, we allocate thirteen supplies to the allies more than the enemies. Hence, as soon as enemies are located, the agents rapidly learn to destroy enemies. As detailed in the previous table, in SMAC-Exp, agents will not have a chance to get a reward if they do not encounter adversaries. This is because there are only three circumstances in which agents can get rewards: when agents defeat an adversary, kill an adversary, or inflict harm on an adversary. As a result, the main challenges necessitate not only micro-management, but also exploration to locate enemies.
 
 |     Scenario      | Distance from opponents   |
 |:---------------:  |:------------------:       |
@@ -124,7 +124,7 @@ To demonstrate the need for assessment of exploration capabilities, we choose el
 
 ### Defensive Sceanrios
 
-We first look into defensive scenario experiments on SMAC+ to test whether MARL algorithms not only adequately employ environmental factors but also learn micro-controls. In terms of algorithmic performance, we observe COMA and QMIX drastically degrade, but MADDPG gradually degrades. This fact reveals that MADDPG enables agents to effectively learn micro-control. However, among baselines, DRIMA achieves the highest score and retains performance even when the supply difference significantly increases.
+We first look into defensive scenario experiments on SMAC-Exp to test whether MARL algorithms not only adequately employ environmental factors but also learn micro-controls. In terms of algorithmic performance, we observe COMA and QMIX drastically degrade, but MADDPG gradually degrades. This fact reveals that MADDPG enables agents to effectively learn micro-control. However, among baselines, DRIMA achieves the highest score and retains performance even when the supply difference significantly increases.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • **<span style="font-family:Raleway; font-size:1.0em;"> Sequential Episodic Buffer </span>**  
 ![Def_infantry](/assets/results/def_infantry_sequential.png){: width="33%" }
