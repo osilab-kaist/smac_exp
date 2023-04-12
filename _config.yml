@@ -1,4 +1,4 @@
-title: SMAC+
+title: SMAC-Exp
 author: MingyuKim
 email: callingu@kaist.ac.kr
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -12,10 +12,10 @@ show_excerpts: true # set to true to show excerpts on the homepage
 sass:
   sass_dir: _sass
 plainwhite:
-  name: SMAC+
+  name: SMAC-Exp
   tagline: |
-    Multi-Agent Challenges
-    for Multi-Stage Tasks
+    The StarCraft Multi-Agent
+    Exploration Challenges
   date_format: "%b %-d, %Y"
   sitemap: false # set to true to generate sitemap.xml content
   search: false # set to true to enable searchbar
