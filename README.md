@@ -355,12 +355,16 @@ X : Absence of tensorboard logs and checkpoints.
 
 ## 📌 Citation
 ```bibtext
-@article{kim2022smacplus,
-  title={The StarCraft Multi-Agent Exploration Challenges : Learning Multi-Stage Tasks and Environmental Factors without Precise Reward Functions},
-  author={Mingyu Kim, Jihwan Oh, Yongsik Lee, Joonkee Kim, Seonghwan Kim, Song Chong, Se-Young Yun},
-  journal={arXiv preprint arXiv:2207.02007},
-  year={2022}
-}
+@ARTICLE{10099458,
+  author={Kim, Mingyu and Oh, Jihwan and Lee, Yongsik and Kim, Joonkee and Kim, Seonghwan and Chong, Song and Yun, Seyoung},
+  journal={IEEE Access}, 
+  title={The StarCraft Multi-Agent Exploration Challenges: Learning Multi-Stage Tasks and Environmental Factors Without Precise Reward Functions}, 
+  year={2023},
+  volume={11},
+  number={},
+  pages={37854-37868},
+  doi={10.1109/ACCESS.2023.3266652}}
+
 ```
 <!-- ## Saving and loading learnt models
 
